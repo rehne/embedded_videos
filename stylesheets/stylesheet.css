@@ -34,9 +34,19 @@ a {
   background-color: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.3); }
 
-.video{
-    margin: 0 auto;
-    width: inherit;
+video#bgvid{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: url(video/background.jpg) no-repeat;
+  background-size: cover;
 }
 
 @media screen and (min-width: 64em) {
