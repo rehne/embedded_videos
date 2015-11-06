@@ -36,8 +36,7 @@ a {
 
 video#bgvid{
     margin: 0 auto;
-    top: 0px;
-    min-width: 100%;
+    width: 100%;
     position: fixed;
 }
 
