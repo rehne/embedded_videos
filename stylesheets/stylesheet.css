@@ -37,7 +37,6 @@ a {
 video#bgvid{
     margin: 0 auto;
     width: 100%;
-    position: fixed;
 }
 
 @media screen and (min-width: 64em) {
