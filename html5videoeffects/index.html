@@ -8,6 +8,105 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="src/video-effects.css">
+    <style>
+      .video-background{
+          width: 600px;
+          height: 337px;
+          position: relative;
+          margin-top: 12px;
+          z-index: 100;
+      }
+      .video-background-border{
+          border: 1px solid #333;
+      }
+      .video-background-round{
+          -webkit-border-radius: 6px;
+          -moz-border-radius: 6px;
+          -ms-border-radius: 6px;
+          -o-border-radius: 6px;
+          border-radius: 6px;
+      }
+      .video-background-shadow{
+          box-shadow: 3px 3px 5px #333;
+      }
+      .video-background-solid{
+          background: gray;
+          padding:15px;
+      }
+      .video-background-gradient {
+          background: gray;/* Old browsers */
+          background: -moz-linear-gradient(top,  #333333 1%, gray 100%); /* FF3.6+ */
+          background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#333333), color-stop(100%,gray)); /* Chrome,Safari4+ */
+          background: -webkit-linear-gradient(top,  #333333 1%,gray 100%); /* Chrome10+,Safari5.1+ */
+          background: -o-linear-gradient(top,  #333333 1%,gray 100%); /* Opera 11.10+ */
+          background: -ms-linear-gradient(top,  #333333 1%,gray 100%); /* IE10+ */
+          background: linear-gradient(to bottom,  #333333 1%,gray100%); /* W3C */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='gray',GradientType=0 ); /* IE6-9 */
+          padding:15px;
+      }
+      .video-background-image {
+          background: url(src/tile2.png) no-repeat;
+          padding:15px;
+      }
+      .video-background-tile {
+          background: url(src/tile.png) repeat;
+          padding:15px;
+      }
+      .video-mask-rectangle {
+          -webkit-border-radius: 0px;
+          -moz-border-radius: 0px;
+          -ms-border-radius: 0px;
+          -o-border-radius: 0px;
+          border-radius: 0px;
+          overflow:hidden;
+          width:600px;
+          height:160px;
+          position:absolute;
+          top:100px;
+      }
+      .video-mask-animated {
+          -webkit-border-radius: 0px;
+          -moz-border-radius: 0px;
+          -ms-border-radius: 0px;
+          -o-border-radius: 0px;
+          border-radius: 0px;
+          overflow:hidden;
+          width:600px;
+          height:144px;
+          position:absolute;
+      }
+      .video-mask-circle {
+          -webkit-border-radius: 150px;
+          -moz-border-radius: 150px;
+          -ms-border-radius: 150px;
+          -o-border-radius: 150px;
+          border-radius: 150px;
+          overflow:hidden;
+          width:300px;
+          height:300px;
+          position:absolute;
+          top:35px;
+          left:165px;
+      }
+      .video-display-none{
+          display: none;
+      }
+      .video-visibility-hidden{
+          visibility: hidden;
+      }
+      .video-opacity-dimmed{
+          opacity:0.5;
+      }
+      .video-size-medium{
+          width:300px;
+          height:168.5px;
+      }
+      .video-size-small{
+          width:150px;
+          height:84.25px;
+      }
+    </style>
   </head>
   <body>
     <section class="page-header">
@@ -16,15 +115,268 @@
       <a href="../index.html" class="btn">How-To Embedding</a>
       <a href="#" class="btn">HTML5 Video Effects</a>
       <a href="#" class="btn">Download .tar.gz</a>
+      <div id="header-background">
+        <div id="video-column">
+              <div id="video-wrapper" class="fixed video-background">
+                  <div id="video-mask">
+                      <video id="video-source" loop autoplay width="600" height="337">
+                          <source src="video/tiger.mp4" type="video/mp4">
+                          <source src="video/tiger.webm" type="video/webm">
+                          <source src="video/tiger.ogv" type="video/ogg">
+                      </video>
+                  </div>
+              </div>
+          </div>
+      </div>
     </section>
-
     <section class="main-content">
+      <div>
+        <h1>Tap an effect to see what happens!</h1>
 
+        <h3>Add a border & background</h3>
+        <a class="butt btn-big" data-effect="border">Border</a>
+        <a class="butt btn-big" data-effect="round">Round</a>
+        <a class="butt btn-big" data-effect="shadow">Shadow</a>
+        <a class="butt btn-big" data-effect="color">Color</a>
+        <a class="butt btn-big" data-effect="gradient">Gradient</a>
+        <a class="butt btn-big" data-effect="image">Image</a>
+        <a class="butt btn-big" data-effect="tile">Tile</a>
+        <a class="butt btn-big" data-effect="clear">Clear</a>
+
+        <h3>Crop the video</h3>
+        <a class="butt btn-big" data-effect="mask">Rectangle</a>
+        <a class="butt btn-big" data-effect="maskanimated">Animated Mask</a>
+        <a class="butt btn-big" data-effect="maskcircle">Circle</a>
+        <a class="butt btn-big" data-effect="clearmask">Clear</a>
+
+        <p>*Note: The circle mask only works in Internet Explorer.<p>
+
+        <h3>Show & hide the video</h3>
+        <a class="butt btn-big" data-effect="visibility">Visibility</a>
+        <a class="butt btn-big" data-effect="opacity">Opacity</a>
+
+        <h3>Change the video size</h3>
+        <a class="butt btn-big" data-effect="small">Small</a>
+        <a class="butt btn-big" data-effect="medium">Medium</a>
+        <a class="butt btn-big" data-effect="large">Large</a>
+
+        <h3>Drag the video</h3>
+        <a class="butt btn-big" data-effect="drag">Drag & Drop</a>
+        <a class="butt btn-big" data-effect="dragclear">Reset</a>
+
+        <hr>
+      </div>
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/rehne/embedded_videos">Embedded Videos</a> | Projekt von <a href="https://github.com/Cuhater">Christian Krenn</a> und <a href="https://github.com/rehne">René Honnen</a>.</span>
 
         <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
     </section>
+    <script>
+    var useBorder = false,
+          useRound = false,
+          useShadow = false,
+          displayNone = false,
+          visibilityHidden = false,
+          opacityDimmed = false,
+          backgroundClass = "video-background",
+          maskAnimating = false,
+          maskClass = "none",
+          sizeClass = "none",
+          visibilityClass = "none",
+          mask = $("#video-mask"),
+          video = $("#video-source"),
+          wrapper = $("#video-wrapper");
+
+      // Call effect routine
+      function showEffect(effect){
+          switch(effect){
+
+              // Border & background
+              case "border":
+                  useBorder = !useBorder;
+                  swapBorderClasses( useBorder, "video-background-border", false );
+                  break;
+              case "round":
+                  useRound = !useRound;
+                  swapBorderClasses( useRound, "video-background-round", true );
+                  break;
+              case "shadow":
+                  useShadow = !useShadow;
+                  swapBorderClasses( useShadow, "video-background-shadow", false );
+                  break;
+              case "color":
+                  swapBackgroundClasses("video-background-solid");
+                  break;
+              case "gradient":
+                  swapBackgroundClasses("video-background-gradient");
+                  break;
+              case "image":
+                  swapBackgroundClasses("video-background-image");
+                  break;
+              case "tile":
+                  swapBackgroundClasses("video-background-tile");
+                  break;
+              case "clear":
+                  clearClasses();
+                  break;
+
+              // Masks
+              case "mask":
+                  mask.attr("style", "");
+                  swapMaskClasses("video-mask-rectangle");
+                  break;
+              case "maskanimated":
+                  maskAnimating = true;
+                  mask.attr("style", "");
+                  swapMaskClasses("video-mask-animated");
+                  animateMask();
+                  break;
+              case "maskcircle":
+                  mask.attr("style", "");
+                  swapMaskClasses("video-mask-circle");
+                  break;
+              case "clearmask":
+                  clearMaskClasses();
+                  break;
+
+              // Show & hide
+             case "display":
+                  displayNone = !displayNone;
+                  swapVisibilityClasses(displayNone, "video-display-none");
+                  break;
+              case "visibility":
+                  visibilityHidden = !visibilityHidden;
+                  swapVisibilityClasses(visibilityHidden, "video-visibility-hidden");
+                  break;
+              case "opacity":
+                  opacityDimmed = !opacityDimmed;
+                  swapVisibilityClasses(opacityDimmed, "video-opacity-dimmed");
+                  break;
+
+              // Change size
+              case "small":
+                  swapSizeClasses("video-size-small");
+                  break;
+              case "medium":
+                  swapSizeClasses("video-size-medium");
+                  break;
+              case "large":
+                  swapSizeClasses("video-size-large");
+                  break;
+
+              // Drag & drop
+              case "drag":
+                  video.draggable();
+                  break;
+              case "dragclear":
+                  video.draggable("destroy");
+                  video.position({
+                      my: "center center",
+                      at: "center center",
+                      of: $("#video-wrapper")
+                  });
+                  break;
+          }
+      }
+      // Handle button clicks
+      $("a[data-effect]").on({
+          "click": function(e){
+              showEffect($(this).attr('data-effect'));
+          }
+      });
+
+      // Border & background utils
+      function swapBorderClasses( addOrRemove, cls, addToVideo ){
+          if( addOrRemove ){
+              if( addToVideo ){
+                  video.addClass(cls);
+              }
+              wrapper.addClass(cls);
+          }else{
+              if( addToVideo ){
+                  video.removeClass(cls);
+              }
+              wrapper.removeClass(cls);
+          }
+      }
+
+      function swapBackgroundClasses( cls ){
+          if( backgroundClass !== "video-background" ){
+              wrapper.removeClass(backgroundClass);
+          }
+          backgroundClass = cls;
+          wrapper.addClass(backgroundClass);
+      }
+
+      function clearClasses(){
+          if( backgroundClass !== "video-background" ){
+              wrapper.removeClass(backgroundClass);
+          }
+          backgroundClass = "video-background";
+          useBorder = false;
+          useRound = false;
+          useShadow = false;
+          swapBorderClasses(useBorder, "video-background-border", false);
+          swapBorderClasses(useRound, "video-background-round", true);
+          swapBorderClasses(useShadow, "video-background-shadow", false);
+      }
+
+      // Mask utils
+      function swapMaskClasses( cls ){
+          if( maskClass !== "none" ){
+              mask.removeClass(maskClass);
+          }
+          maskClass = cls;
+          mask.addClass(maskClass);
+      }
+
+      function animateMask(){
+          mask.animate({ top: 200 }, {
+              duration: 'slow',
+              easing: 'swing'
+          }).animate({ top: 20 }, {
+              duration: 'slow',
+              easing: 'swing'
+          });
+      }
+
+      function clearMaskClasses(){
+          mask.removeClass(maskClass);
+          mask.attr("style", "");
+          maskClass = "none";
+          maskAnimating = false;
+      }
+
+      // Visibility utils
+      function swapVisibilityClasses( addOrRemove, cls ){
+          if( addOrRemove ){
+              if( visibilityClass !== "none" ){
+                  video.removeClass(visibilityClass);
+              }
+              video.addClass(cls);
+          }else{
+              video.removeClass(cls);
+          }
+      }
+
+      // Size utils
+      function swapSizeClasses( cls ){
+          if( sizeClass !== "none" ){
+              video.removeClass(sizeClass);
+          }
+          if( cls === "video-size-large" ){
+              sizeClass = "none";
+          }else{
+              sizeClass = cls;
+              video.addClass(sizeClass);
+          }
+          video.position({
+              my: "center center",
+              at: "center center",
+              of: $("#video-wrapper")
+          });
+      }
+    </script>
   </body>
 </html>
