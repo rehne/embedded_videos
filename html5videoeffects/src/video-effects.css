@@ -70,8 +70,7 @@
     width: 100%;
     max-width: 668px;
 }
-
-video-background{
+.video-background{
     width: 600px;
     height: 337px;
     position: relative;
@@ -107,11 +106,11 @@ video-background{
     padding:15px;
 }
 .video-background-image {
-    background: url(src/tile2.png) no-repeat;
+    background: url(tile2.png) no-repeat;
     padding:15px;
 }
 .video-background-tile {
-    background: url(src/tile.png) repeat;
+    background: url(tile.png) repeat;
     padding:15px;
 }
 .video-mask-rectangle {
@@ -166,3 +165,4 @@ video-background{
 .video-size-small{
     width:150px;
     height:84.25px;
+}
