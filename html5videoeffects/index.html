@@ -127,9 +127,7 @@
 
         switch(effect){
 
-            //--------------------
             // Border & background
-
             case "border":
                 useBorder = !useBorder;
                 swapBorderClasses( useBorder, "video-background-border", false );
@@ -158,9 +156,7 @@
                 clearClasses();
                 break;
 
-            //--------------------
             // Masks
-
             case "mask":
                 mask.attr("style", "");
                 swapMaskClasses("video-mask-rectangle");
@@ -179,10 +175,8 @@
                 clearMaskClasses();
                 break;
 
-            //--------------------
             // Show & hide
-
-        /*    case "display":
+            /*  case "display":
                 displayNone = !displayNone;
                 swapVisibilityClasses(displayNone, "video-display-none");
                 break; */
@@ -195,9 +189,7 @@
                 swapVisibilityClasses(opacityDimmed, "video-opacity-dimmed");
                 break;
 
-            //--------------------
             // Change size
-
             case "small":
                 swapSizeClasses("video-size-small");
                 break;
@@ -208,9 +200,7 @@
                 swapSizeClasses("video-size-large");
                 break;
 
-            //--------------------
             // Drag & drop
-
             case "drag":
                 video.draggable();
                 break;
@@ -231,9 +221,7 @@
         }
     });
 
-    //--------------------
     // Border & background utils
-
     function swapBorderClasses( addOrRemove, cls, addToVideo ){
         if( addOrRemove ){
             if( addToVideo ){
@@ -269,9 +257,7 @@
         swapBorderClasses(useShadow, "video-background-shadow", false);
     }
 
-    //--------------------
     // Mask utils
-
     function swapMaskClasses( cls ){
         if( maskClass !== "none" ){
             mask.removeClass(maskClass);
@@ -297,9 +283,7 @@
         maskAnimating = false;
     }
 
-    //--------------------
     // Visibility utils
-
     function swapVisibilityClasses( addOrRemove, cls ){
         if( addOrRemove ){
             if( visibilityClass !== "none" ){
@@ -311,9 +295,7 @@
         }
     }
 
-    //--------------------
     // Size utils
-
     function swapSizeClasses( cls ){
         if( sizeClass !== "none" ){
             video.removeClass(sizeClass);
