@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>
+    <script src="src/teil1.js"></script>
+    <!-- <script src="src/teil2.js"></script> -->
     <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
@@ -35,53 +37,67 @@
     </section>
     <section class="main-content">
       <div>
-        <h1>Tap an effect to see what happens!</h1>
-
         <h3>Add a border & background</h3>
-        <a class="butt btn-big" data-effect="border">Border</a>
-        <a class="butt btn-big" data-effect="round">Round</a>
-        <a class="butt btn-big" data-effect="shadow">Shadow</a>
-        <a class="butt btn-big" data-effect="color">Color</a>
-        <a class="butt btn-big" data-effect="gradient">Gradient</a>
-        <a class="butt btn-big" data-effect="image">Image</a>
-        <a class="butt btn-big" data-effect="tile">Tile</a>
-        <a class="butt btn-big" data-effect="clear">Clear</a>
+        <div id="box">
+          <a class="btn-effects" data-effect="border">Border</a>
+          <a class="btn-effects" data-effect="round">Round</a>
+          <a class="btn-effects" data-effect="shadow">Shadow</a>
+          <a class="btn-effects" data-effect="color">Color</a>
+          <a class="btn-effects" data-effect="gradient">Gradient</a>
+          <a class="btn-effects" data-effect="image">Image</a>
+          <a class="btn-effects" data-effect="tile">Tile</a>
+          <a class="btn-effects" data-effect="clear">Clear</a>
+        </div>
 
         <h3>Crop the video</h3>
-        <a class="butt btn-big" data-effect="mask">Rectangle</a>
-        <a class="butt btn-big" data-effect="maskanimated">Animated Mask</a>
-        <a class="butt btn-big" data-effect="maskcircle">Circle</a>
-        <a class="butt btn-big" data-effect="clearmask">Clear</a>
+        <div id="box">
+          <a class="btn-effects" data-effect="mask">Rectangle</a>
+          <a class="btn-effects" data-effect="maskanimated">Animated Mask</a>
+          <a class="btn-effects" data-effect="maskcircle">Circle</a>
+          <a class="btn-effects" data-effect="clearmask">Clear</a>
+        </div>
 
         <h3>Show & hide the video</h3>
-        <a class="butt btn-big" data-effect="visibility">Visibility</a>
-        <a class="butt btn-big" data-effect="opacity">Opacity</a>
+        <div id="box">
+          <a class="btn-effects" data-effect="visibility">Visibility</a>
+          <a class="btn-effects" data-effect="opacity">Opacity</a>
+        </div>
 
         <h3>Change the video size</h3>
-        <a class="butt btn-big" data-effect="small">Small</a>
-        <a class="butt btn-big" data-effect="medium">Medium</a>
-        <a class="butt btn-big" data-effect="large">Large</a>
+        <div id="box">
+          <a class="btn-effects" data-effect="small">Small</a>
+          <a class="btn-effects" data-effect="medium">Medium</a>
+          <a class="btn-effects" data-effect="large">Large</a>
+        </div>
 
         <h3>Drag the video</h3>
-        <a class="butt btn-big" data-effect="drag">Drag & Drop</a>
-        <a class="butt btn-big" data-effect="dragclear">Reset</a>
+        <div id="box">
+          <a class="btn-effects" data-effect="drag">Drag & Drop</a>
+          <a class="btn-effects" data-effect="dragclear">Reset</a>
+        </div>
 
         <h3>Transform the video</h3>
-        <a class="butt btn-big" data-effect="rotate">Rotate</a>
-        <a class="butt btn-big" data-effect="skew">Skew</a>
-        <a class="butt btn-big" data-effect="scale">Scale</a>
-        <a class="butt btn-big" data-effect="translate">Translate</a>
-        <a class="butt btn-big" data-effect="cleartransform">Clear</a>
+        <div id="box">
+          <a class="btn-effects" data-effect="rotate">Rotate</a>
+          <a class="btn-effects" data-effect="skew">Skew</a>
+          <a class="btn-effects" data-effect="scale">Scale</a>
+          <a class="btn-effects" data-effect="translate">Translate</a>
+          <a class="btn-effects" data-effect="cleartransform">Clear</a>
+        </div>
 
         <h3>Animate the video</h3>
-        <a class="butt btn-big" data-effect="fade">Fade</a>
-        <a class="butt btn-big" data-effect="transition">Enter / Exit</a>
-        <a class="butt btn-big" data-effect="animation">Bounce</a>
-        <a class="butt btn-big" data-effect="3D">3D Flip</a>
+        <div id="box">
+          <a class="btn-effects" data-effect="fade">Fade</a>
+          <a class="btn-effects" data-effect="transition">Enter / Exit</a>
+          <a class="btn-effects" data-effect="animation">Bounce</a>
+          <a class="btn-effects" data-effect="3D">3D Flip</a>
+        </div>
 
         <h3>Add HTML5 canvas effects</h3>
-        <a class="butt btn-big" data-effect="color">Color Effect</a>
-        <a class="butt btn-big" data-effect="tile">Drag & Drop Tile Effect</a>
+        <div id="box">
+          <a class="btn-effects" data-effect="color">Color Effect</a>
+          <a class="btn-effects" data-effect="tile">Drag & Drop Tile Effect</a>
+        </div>
 
       </div>
       <footer class="site-footer">
@@ -92,209 +108,229 @@
     </section>
     <script>
     var useBorder = false,
-          useRound = false,
-          useShadow = false,
-          displayNone = false,
-          visibilityHidden = false,
-          opacityDimmed = false,
-          backgroundClass = "video-background",
-          maskAnimating = false,
-          maskClass = "none",
-          sizeClass = "none",
-          visibilityClass = "none",
-          mask = $("#video-mask"),
-          video = $("#video-source"),
-          wrapper = $("#video-wrapper");
+        useRound = false,
+        useShadow = false,
+        displayNone = false,
+        visibilityHidden = false,
+        opacityDimmed = false,
+        backgroundClass = "video-background",
+        maskAnimating = false,
+        maskClass = "none",
+        sizeClass = "none",
+        visibilityClass = "none",
+        mask = $("#video-mask"),
+        video = $("#video-source"),
+        wrapper = $("#video-wrapper");
 
-      // Call effect routine
-      function showEffect(effect){
-          switch(effect){
+    // Call effect routine
+    function showEffect(effect){
 
-              // Border & background
-              case "border":
-                  useBorder = !useBorder;
-                  swapBorderClasses( useBorder, "video-background-border", false );
-                  break;
-              case "round":
-                  useRound = !useRound;
-                  swapBorderClasses( useRound, "video-background-round", true );
-                  break;
-              case "shadow":
-                  useShadow = !useShadow;
-                  swapBorderClasses( useShadow, "video-background-shadow", false );
-                  break;
-              case "color":
-                  swapBackgroundClasses("video-background-solid");
-                  break;
-              case "gradient":
-                  swapBackgroundClasses("video-background-gradient");
-                  break;
-              case "image":
-                  swapBackgroundClasses("video-background-image");
-                  break;
-              case "tile":
-                  swapBackgroundClasses("video-background-tile");
-                  break;
-              case "clear":
-                  clearClasses();
-                  break;
+        switch(effect){
 
-              // Masks
-              case "mask":
-                  mask.attr("style", "");
-                  swapMaskClasses("video-mask-rectangle");
-                  break;
-              case "maskanimated":
-                  maskAnimating = true;
-                  mask.attr("style", "");
-                  swapMaskClasses("video-mask-animated");
-                  animateMask();
-                  break;
-              case "maskcircle":
-                  mask.attr("style", "");
-                  swapMaskClasses("video-mask-circle");
-                  break;
-              case "clearmask":
-                  clearMaskClasses();
-                  break;
+            //--------------------
+            // Border & background
 
-              // Show & hide
-             case "display":
-                  displayNone = !displayNone;
-                  swapVisibilityClasses(displayNone, "video-display-none");
-                  break;
-              case "visibility":
-                  visibilityHidden = !visibilityHidden;
-                  swapVisibilityClasses(visibilityHidden, "video-visibility-hidden");
-                  break;
-              case "opacity":
-                  opacityDimmed = !opacityDimmed;
-                  swapVisibilityClasses(opacityDimmed, "video-opacity-dimmed");
-                  break;
+            case "border":
+                useBorder = !useBorder;
+                swapBorderClasses( useBorder, "video-background-border", false );
+                break;
+            case "round":
+                useRound = !useRound;
+                swapBorderClasses( useRound, "video-background-round", true );
+                break;
+            case "shadow":
+                useShadow = !useShadow;
+                swapBorderClasses( useShadow, "video-background-shadow", false );
+                break;
+            case "color":
+                swapBackgroundClasses("video-background-solid");
+                break;
+            case "gradient":
+                swapBackgroundClasses("video-background-gradient");
+                break;
+            case "image":
+                swapBackgroundClasses("video-background-image");
+                break;
+            case "tile":
+                swapBackgroundClasses("video-background-tile");
+                break;
+            case "clear":
+                clearClasses();
+                break;
 
-              // Change size
-              case "small":
-                  swapSizeClasses("video-size-small");
-                  break;
-              case "medium":
-                  swapSizeClasses("video-size-medium");
-                  break;
-              case "large":
-                  swapSizeClasses("video-size-large");
-                  break;
+            //--------------------
+            // Masks
 
-              // Drag & drop
-              case "drag":
-                  video.draggable();
-                  break;
-              case "dragclear":
-                  video.draggable("destroy");
-                  video.position({
-                      my: "center center",
-                      at: "center center",
-                      of: $("#video-wrapper")
-                  });
-                  break;
-          }
-      }
-      // Handle button clicks
-      $("a[data-effect]").on({
-          "click": function(e){
-              showEffect($(this).attr('data-effect'));
-          }
-      });
+            case "mask":
+                mask.attr("style", "");
+                swapMaskClasses("video-mask-rectangle");
+                break;
+            case "maskanimated":
+                maskAnimating = true;
+                mask.attr("style", "");
+                swapMaskClasses("video-mask-animated");
+                animateMask();
+                break;
+            case "maskcircle":
+                mask.attr("style", "");
+                swapMaskClasses("video-mask-circle");
+                break;
+            case "clearmask":
+                clearMaskClasses();
+                break;
 
-      // Border & background utils
-      function swapBorderClasses( addOrRemove, cls, addToVideo ){
-          if( addOrRemove ){
-              if( addToVideo ){
-                  video.addClass(cls);
-              }
-              wrapper.addClass(cls);
-          }else{
-              if( addToVideo ){
-                  video.removeClass(cls);
-              }
-              wrapper.removeClass(cls);
-          }
-      }
+            //--------------------
+            // Show & hide
 
-      function swapBackgroundClasses( cls ){
-          if( backgroundClass !== "video-background" ){
-              wrapper.removeClass(backgroundClass);
-          }
-          backgroundClass = cls;
-          wrapper.addClass(backgroundClass);
-      }
+        /*    case "display":
+                displayNone = !displayNone;
+                swapVisibilityClasses(displayNone, "video-display-none");
+                break; */
+            case "visibility":
+                visibilityHidden = !visibilityHidden;
+                swapVisibilityClasses(visibilityHidden, "video-visibility-hidden");
+                break;
+            case "opacity":
+                opacityDimmed = !opacityDimmed;
+                swapVisibilityClasses(opacityDimmed, "video-opacity-dimmed");
+                break;
 
-      function clearClasses(){
-          if( backgroundClass !== "video-background" ){
-              wrapper.removeClass(backgroundClass);
-          }
-          backgroundClass = "video-background";
-          useBorder = false;
-          useRound = false;
-          useShadow = false;
-          swapBorderClasses(useBorder, "video-background-border", false);
-          swapBorderClasses(useRound, "video-background-round", true);
-          swapBorderClasses(useShadow, "video-background-shadow", false);
-      }
+            //--------------------
+            // Change size
 
-      // Mask utils
-      function swapMaskClasses( cls ){
-          if( maskClass !== "none" ){
-              mask.removeClass(maskClass);
-          }
-          maskClass = cls;
-          mask.addClass(maskClass);
-      }
+            case "small":
+                swapSizeClasses("video-size-small");
+                break;
+            case "medium":
+                swapSizeClasses("video-size-medium");
+                break;
+            case "large":
+                swapSizeClasses("video-size-large");
+                break;
 
-      function animateMask(){
-          mask.animate({ top: 200 }, {
-              duration: 'slow',
-              easing: 'swing'
-          }).animate({ top: 20 }, {
-              duration: 'slow',
-              easing: 'swing'
-          });
-      }
+            //--------------------
+            // Drag & drop
 
-      function clearMaskClasses(){
-          mask.removeClass(maskClass);
-          mask.attr("style", "");
-          maskClass = "none";
-          maskAnimating = false;
-      }
+            case "drag":
+                video.draggable();
+                break;
+            case "dragclear":
+                video.draggable("destroy");
+                video.position({
+                    my: "center center",
+                    at: "center center",
+                    of: $("#video-wrapper")
+                });
+                break;
+        }
+    }
+    // Handle button clicks
+    $("a[data-effect]").on({
+        "click": function(e){
+            showEffect($(this).attr('data-effect'));
+        }
+    });
 
-      // Visibility utils
-      function swapVisibilityClasses( addOrRemove, cls ){
-          if( addOrRemove ){
-              if( visibilityClass !== "none" ){
-                  video.removeClass(visibilityClass);
-              }
-              video.addClass(cls);
-          }else{
-              video.removeClass(cls);
-          }
-      }
+    //--------------------
+    // Border & background utils
 
-      // Size utils
-      function swapSizeClasses( cls ){
-          if( sizeClass !== "none" ){
-              video.removeClass(sizeClass);
-          }
-          if( cls === "video-size-large" ){
-              sizeClass = "none";
-          }else{
-              sizeClass = cls;
-              video.addClass(sizeClass);
-          }
-          video.position({
-              my: "center center",
-              at: "center center",
-              of: $("#video-wrapper")
-          });
-      }
+    function swapBorderClasses( addOrRemove, cls, addToVideo ){
+        if( addOrRemove ){
+            if( addToVideo ){
+                video.addClass(cls);
+            }
+            wrapper.addClass(cls);
+        }else{
+            if( addToVideo ){
+                video.removeClass(cls);
+            }
+            wrapper.removeClass(cls);
+        }
+    }
+
+    function swapBackgroundClasses( cls ){
+        if( backgroundClass !== "video-background" ){
+            wrapper.removeClass(backgroundClass);
+        }
+        backgroundClass = cls;
+        wrapper.addClass(backgroundClass);
+    }
+
+    function clearClasses(){
+        if( backgroundClass !== "video-background" ){
+            wrapper.removeClass(backgroundClass);
+        }
+        backgroundClass = "video-background";
+        useBorder = false;
+        useRound = false;
+        useShadow = false;
+        swapBorderClasses(useBorder, "video-background-border", false);
+        swapBorderClasses(useRound, "video-background-round", true);
+        swapBorderClasses(useShadow, "video-background-shadow", false);
+    }
+
+    //--------------------
+    // Mask utils
+
+    function swapMaskClasses( cls ){
+        if( maskClass !== "none" ){
+            mask.removeClass(maskClass);
+        }
+        maskClass = cls;
+        mask.addClass(maskClass);
+    }
+
+    function animateMask(){
+        mask.animate({ top: 200 }, {
+            duration: 'slow',
+            easing: 'swing'
+        }).animate({ top: 20 }, {
+            duration: 'slow',
+            easing: 'swing'
+        });
+    }
+
+    function clearMaskClasses(){
+        mask.removeClass(maskClass);
+        mask.attr("style", "");
+        maskClass = "none";
+        maskAnimating = false;
+    }
+
+    //--------------------
+    // Visibility utils
+
+    function swapVisibilityClasses( addOrRemove, cls ){
+        if( addOrRemove ){
+            if( visibilityClass !== "none" ){
+                video.removeClass(visibilityClass);
+            }
+            video.addClass(cls);
+        }else{
+            video.removeClass(cls);
+        }
+    }
+
+    //--------------------
+    // Size utils
+
+    function swapSizeClasses( cls ){
+        if( sizeClass !== "none" ){
+            video.removeClass(sizeClass);
+        }
+        if( cls === "video-size-large" ){
+            sizeClass = "none";
+        }else{
+            sizeClass = cls;
+            video.addClass(sizeClass);
+        }
+        video.position({
+            my: "center center",
+            at: "center center",
+            of: $("#video-wrapper")
+        });
+    }
+
     </script>
   </body>
 </html>

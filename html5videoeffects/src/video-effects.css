@@ -80,11 +80,11 @@
     border: 1px solid #333;
 }
 .video-background-round{
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    -ms-border-radius: 6px;
-    -o-border-radius: 6px;
-    border-radius: 6px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px;
 }
 .video-background-shadow{
     box-shadow: 3px 3px 5px #333;
