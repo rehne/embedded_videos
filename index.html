@@ -6,12 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">Embedded Videos</h1>
+
+      <video autoplay loop id="header-vid">
+          <source src="src/headerS.webm" type="video/webm">
+          <source src="src/headerS.mp4" type="video/mp4">
+      </video>
+
+      <div class="project-name">Embedded Videos</div>
       <h2 class="project-tagline">Projekt der Technischen Hochschule Köln im Rahmen des Studiengangs Medieninformatik</h2>
       <a href="#" class="btn">How-To Embedding</a>
       <a href="html5videoeffects/index.html" class="btn">HTML5 Video Effects</a>
@@ -22,16 +29,92 @@
 
         <h3>Allgemeines</h3>
 
-        <p>Auf diesen Seiten wollen wir erklären und zeigen wie man Videos in Websites einbindet und was man damit alles anstellen kann. Dazu haben wir ein paar Beispiele vorbereitet und zeigen anhand von <code>Code</code> wie wir dies umgesetzt haben.</p>
+        <p>Das Thema dieser Seite beschäftigt sich mit der Einbettung/Einbindung von Videos auf Webseiten. Wir möchten euch versuchen zu erklären wie man Videos mithilfe von verschiedenen Techniken
+        	in Websites einbindet.<br>
+          Zu jedem Artikel findet ihr Codebeispiele, an denen wir den benutzten Code veranschaulichen. <br>
+          Zusätzlich sind grundlegende Fragen in unserem FAQ-Bereich zu finden.</br>
+   	      Wer noch mehr Informationen benötigt, der findet das gesamte Projekt auch auf Github. <a href="https://github.com/rehne/embedded_videos/tree/gh-pages"><img src="src/GitHub_Logo.png" align="right"></a></p>
 
-        <h3>Einfaches Embedding</h3>
+        <h3>Einfache Einbindung (YouTube)</h3>
 
-        <p>Was wahrscheinlich jeder kennt, der sich nur ein bisschen mit diesem Thema schon einmal beschäftigt hat, ist wie man YouTube-Videos auf Websites einbettet.
-          Dazu kann man im Beispiel YouTube sich ganz einfach den kompletten <code>iframe</code> -Tag mit Link unter dem Video auf Youtube kopieren und diesen im HTML-Quellcode einfügen:<br>
-          <code>< iframe width="100%" height="100%" src="https://www.youtube.com/embed/YgM8HVoG2G8" frameborder="0" allowfullscreen>< /iframe></code><br>
-          Daraufhin wird der Browser diesen <code>iframe</code> Tag als YouTube Video erkennen und auch so anzeigen.
-          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YgM8HVoG2G8" frameborder="0" allowfullscreen></iframe>
+           <p>Die simpelste Methode der Einbettung ist das Einbinden von Videos bekannten Videoportalen wie Youtube oder Vimeo. Diese stellen uns einen Iframe-Code zur Verfügung, den wir in unser Markup der HTML Datei der Seite einbringen.</p>
+     <br>
+          <p>Beispiel</p>
+          <iframe width="100%" height="360" src="https://www.youtube.com/embed/YgM8HVoG2G8" frameborder="0" allowfullscreen></iframe><br><br>
+           <p>Der Iframe befindet sich unter dem jeweiligen Video der Seite. Mit einem Klick auf <i>Teilen</i> - <i> Einbetten </i> erhält man den Code.</p><br>
+          <div id="box"> <img src="src/yt_embed.png" align="center"></div><p>Code:</p>
+          <div id="box"><code>< iframe width="640" height="360" src="https://www.youtube.com/embed/YgM8HVoG2G8" frameborder="0" allowfullscreen><br>< /iframe></code></div>
+          <p>Erläuterung:<br><br>
+          	Das Element <b>Iframe</b> bzw. Inlineframe ist ein HTML-Element, welches als Objekt innerhalb einer Webseite plaziert wird. In unserem Beispiel das Video welches eingebunden wird.<br> Das Attribut <b>width</b> gibt Breite und <b>height</b> die Höhe des Frames an.<br>Source bzw. <b>src</b> steht für die Quelle der Datei und <b>frameborder</b>=0 gibt an, dass unser Rahmen keinen Rand besitzt.
+
         </p>
+        <p> Weitere Iframe Attribute sind auf <a href="http://www.w3schools.com/tags/tag_iframe.asp">W3Schools.com</a> zu finden</p>
+        <!--- HTML 5 ---->
+<h3>
+        <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>HTML5 video Element</h3>
+        <p>
+
+        Die Hyper Markup Language 5 beinhaltet das Multimedia-Element < video>, welches benutzt werden kann um unser Video ohne zusätzliche Plug-Ins einzubetten. Vorraussetzung für das Benutzen von HTML5 ist das der Browser auf der möglichst aktuellen Version ist.
+
+        </p>
+        <ul style="list-style-image: url(src/ul.png)"><li> Firefox 3.0 (oder höher)</li>
+          <li>Safari 3.0 (oder höher)</li>
+          <li>Opera 10.0 (oder höher)</li>
+          <li>Chrome 3.0 (oder höher)</li>
+        </ul>
+        <p>Beispiel</p>
+        <video width="100%" height="480" controls preload="auto" poster="src/thumbnail.jpg">
+          <source src="src/sc15.webm" type="video/webm">
+          <source src="src/sc15.mp4" type="video/mp4">
+        </video>
+        <div id="box">
+          <code>< video "width="100%" height="480" controls preload="auto" poster=" thumbnail.jpg"><br>
+                < source src=" meinvideo.webm" type="video/webm">< /source> <br>
+                < source src=" meinvideo.mp4" type="video/mp4">< /source> <br>
+                < /video>
+          </code>
+        </div>
+        <p>Erläuterung:<br><br>
+        Das Element < video> ist unser Objekt welchem wir verschiedene Parameter zuweisen können.<br> <b>controls</b> fügt eine Reihe von Videosteuerelementen hinzu.<br><b>preload</b> definiert erforderliche Puffermenge des Videos.<br><b>poster</b> gibt das Platzhalterbild an, das angezeigt wird bis der Inhalt geladen und gestartet wird.</p>
+        <p> Weitere video Attribute sind auf <a href="http://www.w3schools.com/tags/tag_video.asp">W3Schools.com</a> zu finden</p>
+
+        <h3>
+        <a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span class="octicon octicon-link"></span></a>Einbindung durch Zusatztechnologien ( Plug-Ins )</h3>
+        <h4>
+        Flash
+        </h4>
+
+        <p>Erlaubt es uns der Browser nicht das Video nativ mithilfe des <code> < video>-tags</code> einzubinden schafft der Adobe Flash Player abhilfe. Dieses Browser Plug-In ermöglicht uns durch verschiedene Methoden Videos einzubetten. </p>
+
+
+     <OBJECT ID="MediaPlayer" WIDTH="192" HEIGHT="190" CLASSID="CLSID:22D6F312-B0F6-11D0-94AB-0080C74C7E95"
+STANDBY="Loading Windows Media Player components..." TYPE="application/x-oleobject">
+<PARAM NAME="FileName" VALUE="src/sc15.wmv">
+<PARAM name="autostart" VALUE="false">
+<PARAM name="ShowControls" VALUE="true">
+<param name="ShowStatusBar" value="false">
+<PARAM name="ShowDisplay" VALUE="false">
+<EMBED TYPE="application/x-mplayer2" SRC="src/sc15.wmv" NAME="MediaPlayer"
+WIDTH="192" HEIGHT="190" ShowControls="1" ShowStatusBar="0" ShowDisplay="0" autostart="0"> </EMBED>
+</OBJECT>
+         <div id="box"><code></code></div>
+<h4>
+        Quicktime
+        </h4>
+        <p>Eine Alternative zu dem Adobe Flash Player bietet uns Apple's Quicktime. Genau wie bei der Flasheinbindung kann das Video über einen <code>< object></code> oder <code>< embed></code> tag angezeigt werden.  </p>
+
+
+
+
+        <h3>
+        <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+        <p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+
+        <h3>
+        <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+        <p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/rehne/embedded_videos">Embedded Videos</a> | Projekt von <a href="https://github.com/Cuhater">Christian Krenn</a> und <a href="https://github.com/rehne">René Honnen</a>.</span>

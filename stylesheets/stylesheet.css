@@ -7,7 +7,8 @@ body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #606c71; }
+  color: #606c71;
+  position: relative; }
 
 a {
   color: #1e6bb8;
@@ -16,6 +17,7 @@ a {
     text-decoration: underline; }
 
 .btn {
+  z-index: 2147483647;
   display: inline-block;
   margin-bottom: 1rem;
   color: rgba(255, 255, 255, 0.7);
@@ -26,22 +28,35 @@ a {
   border-radius: 0.3rem;
   transition: color 0.2s, background-color 0.2s, border-color 0.2s; }
   .btn + .btn {
-    margin-left: 1rem; }
+    margin-left: 3rem; }
 
 .btn:hover {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   background-color: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.3); }
+#box {
+	padding: 1rem;
+	width: 100%;
+	border: 1px rgb(89,89,89) solid;
+	border-color: rgb(76, 172, 159);
+	background: rgba(76, 172, 159, 0.2);
+	transition: color 0.2s, background-color 0.2s, border-color 0.2s;
 
-video#bgvid{
-    margin: 0 auto;
-    width: 100%;
+}
+#autoplay
+{
+	autoplay: false;
+	autostart: false;
+	autoplay: 0;
+	autostart: 0;
 }
 
+/* ------------------ BUTTON ------------------ */
 @media screen and (min-width: 64em) {
   .btn {
-    padding: 0.75rem 1rem; } }
+    padding: 0.75rem 1rem;
+	margin-top: 20px; } }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .btn {
@@ -56,58 +71,121 @@ video#bgvid{
     font-size: 0.9rem; }
     .btn + .btn {
       margin-top: 1rem;
-      margin-left: 0; } }
+      margin-left: 0;
+	   }  }
 
+
+
+	#header-vid {
+    margin: 0 auto;
+
+	width: 100%;
+    height: auto;
+	z-index: 1;
+	}
+@media screen and (min-width: 64em) {
+  #header-vid {
+     ; } }
+
+@media screen and (min-width: 42em) and (max-width: 64em) {
+  .#header-vid  {
+    } }
+
+@media screen and (max-width: 42em) {
+  #header-vid  {
+	  min-height:17%;
+    } }
+/* ------------------ PAGE HEADER ------------------ */
 .page-header {
   color: #fff;
   text-align: center;
   background-color: #159957;
-  background-image: linear-gradient(120deg, #155799, #159957); }
+  background-image: linear-gradient(120deg, #155799, #159957);
+  }
 
 @media screen and (min-width: 64em) {
   .page-header {
-    padding: 5rem 6rem; } }
+    padding: 0rem 0rem 3rem 0rem ; } }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .page-header {
-    padding: 3rem 4rem; } }
+    padding: 0rem 0rem 3rem 0rem; } }
 
 @media screen and (max-width: 42em) {
   .page-header {
-    padding: 2rem 1rem; } }
+    padding: 0rem 0rem 2rem 0rem; } }
 
+/* ------------------ PROJECT NAME ------------------ */
 .project-name {
-  margin-top: 0;
-  margin-bottom: 0.1rem; }
-
+	/*
+  position: absolute ;
+  font-family: 'Amatic SC';
+  z-index: 2147483647;
+  text-align: center;
+  padding: 10px 0;  }
+  */
+  position: absolute;
+  color: #FFF;
+  text-align: center;
+  font-family: "Amatic SC";
+  font-weight: bold;
+  background-color: rgba(221, 221, 221, 0.3);
+   /* box-shadow: 10px 10px 5px #159957; */
+  width: 70%;
+  z-index: 2147483647;
+  }
 @media screen and (min-width: 64em) {
   .project-name {
-    font-size: 3.25rem; } }
+	top: 1rem;
+	font-size:  4.25rem;
+	z-index: 2147483647;
+} }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .project-name {
-    font-size: 2.25rem; } }
+	  top: 1rem;
+    font-size: 3.25rem;
+	z-index: 2147483647;
+} }
 
 @media screen and (max-width: 42em) {
   .project-name {
-    font-size: 1.75rem; } }
+	  top: 1rem;
+    font-size: 2.75rem;
+	z-index: 2147483647;
+} }
 
+/* ------------------ PROJECT TAGLINE ------------------ */
 .project-tagline {
-  margin-bottom: 2rem;
+ /* margin-bottom: 2rem;
   font-weight: normal;
-  opacity: 0.7; }
+  opacity: 0.7; }*/
+  position: absolute;
+  color: #FFF;
+  text-align: center;
+  font-family: "Amatic SC";
+  font-weight: normal;
+  background-color: rgba(221, 221, 221, 0.3);
+   /* box-shadow: 10px 10px 5px #159957; */
+  width: 77%;
+  z-index: 2147483647;
+  }
 
 @media screen and (min-width: 64em) {
   .project-tagline {
-    font-size: 1.25rem; } }
+    font-size: 2.0rem;
+	top: 7rem; } }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .project-tagline {
-    font-size: 1.15rem; } }
+    font-size: 1.25rem;
+	top: 7rem; } }
 
 @media screen and (max-width: 42em) {
   .project-tagline {
-    font-size: 1rem; } }
+	  visibility:hidden; } }
+
+
 
 .main-content :first-child {
   margin-top: 0; }
@@ -116,8 +194,41 @@ video#bgvid{
 .main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
   margin-top: 2rem;
   margin-bottom: 1rem;
-  font-weight: normal;
+  font-family: "Amatic SC";
   color: #159957; }
+
+  @media  screen and (min-width: 64em) {
+.main-content h1, .main-content h2, .main-content h3{
+    font-size: 2.5rem; } }
+
+@media screen and (min-width: 42em) and (max-width: 64em) {
+.main-content h1, .main-content h2, .main-content h3{
+    font-size: 2.5rem; } }
+
+@media screen and (max-width: 42em) {
+.main-content h1, .main-content h2, .main-content h3{
+    font-size: 1.5rem; } }
+
+
+.main-content h4, .main-content h5, .main-content h6 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-family: "Amatic SC";
+  color: #159957;
+  font-weight: normal; }
+
+  @media  screen and (min-width: 64em) {
+.main-content h4, .main-content h5, .main-content h6 {
+    font-size: 2.5rem; } }
+
+@media screen and (min-width: 42em) and (max-width: 64em) {
+.main-content h4, .main-content h5, .main-content h6 {
+    font-size: 2.5rem; } }
+
+@media screen and (max-width: 42em) {
+.main-content h4, .main-content h5, .main-content h6 {
+    font-size: 1.5rem; } }
+
 .main-content p {
   margin-bottom: 1em; }
 .main-content code {
@@ -208,7 +319,7 @@ video#bgvid{
   background-color: #eff0f1;
   border: 0; }
 
-@media screen and (min-width: 64em) {
+@media  screen and (min-width: 64em) {
   .main-content {
     max-width: 64rem;
     padding: 2rem 6rem;

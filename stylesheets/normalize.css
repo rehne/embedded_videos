@@ -422,3 +422,10 @@ td,
 th {
   padding: 0;
 }
+
+ul {
+	background: rgba(221, 221, 221, 0.3);
+}
+li{ 
+	margin-top: 5px;
+}
