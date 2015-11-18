@@ -14,10 +14,19 @@
     <section class="page-header">
       <div class="project-name">Embedded Videos</div>
       <h2 class="project-tagline">Projekt der Technischen Hochschule Köln im Rahmen des Studiengangs Medieninformatik</h2>
-      <video id="header-vid" controls height="240" width="320" title="video element">
-        <source src="../src/headerSD.mp4" type="video/mp4">
-        <source src="../src/headerSD.webm" type="video/webm">
-      </video>
+
+
+          <video id="header-vid-s" title="video element">
+            <source src="../src/headerS.mp4" type="video/mp4">
+            <source src="../src/headerS.webm" type="video/webm">
+          </video>
+
+          <video id="header-vid-sd" title="video element">
+            <source src="../src/headerSD.mp4" type="video/mp4">
+            <source src="../src/headerSD.webm" type="video/webm">
+          </video>
+
+
       <div id="buttonbar" class="box" style="float: left; width: 50%;">
         <button id="restart" title="Restart button">|&#9668</button>
         <button id="slower" title="Slower playback button">-</button>
@@ -28,6 +37,8 @@
         <button id="volDn"  title="Volume down button">Vol -</button>
         <button id="volUp"  title="Volume up button">Vol +</button>
         <button id="mute" title="Mute button">Mute</button>
+        <button id="opaDn" title="Opacity down button">Opa -</button>
+        <button id="opaUp" title="Opacity up button">Opa +</button>
       </div>
       <div id="buttonbar2" class="box" style="float: left; width: 50%;">
         <button id="restart" title="Restart button">|&#9668</button>
@@ -39,6 +50,8 @@
         <button id="volDn"  title="Volume down button">Vol -</button>
         <button id="volUp"  title="Volume up button">Vol +</button>
         <button id="mute" title="Mute button">Mute</button>
+        <button id="opaDn" title="Opacity down button">Opa -</button>
+        <button id="opaUp" title="Opacity up button">Opa +</button>
       </div>
       <a href="../index.html" class="btn">How-To Embedding</a>
       <a href="../html5videoeffects/index.html" class="btn">HTML5 Video Effects</a>
@@ -54,10 +67,9 @@
       </footer>
     </section>
 
-    <div title="Error message area" id="errorMsg" style="color:Red;"></div>
     <script type="text/javascript">
         function init() {        // Master function, encapsulates all functions
-            var video = document.getElementById("header-vid");
+            var video = document.getElementById("header-vid-s");
             if (video.canPlayType) {   // tests that we have HTML5 video support
                 // if successful, display buttons and set up events
                 document.getElementById("buttonbar").style.display = "block";
@@ -68,10 +80,10 @@
                     button = evt.target; //  get the button id to swap the text based on the state
                     if (video.paused) {   // abspielen und Pause-Symbol anzeigen
                         video.play();
-                        button.textContent = "||";
+                        button.innerHTML = "&#9724";
                     } else {              // pausieren und Play-Symbol anzeigen
                         video.pause();
-                        button.textContent = ">";
+                        button.innerHTML = "&#9658";
                     }
                 }
                 //  button helper functions
@@ -91,12 +103,6 @@
                    errMessage("Video content might not be loaded");
                    }
                  }
-                //  display an error message
-                function errMessage(msg) {
-                // displays an error message for 5 seconds then clears it
-                    document.getElementById("errorMsg").textContent = msg;
-                    setTimeout("document.getElementById('errorMsg').textContent=''", 5000);
-                }
                 // change volume based on incoming value
                 function setVol(value) {
                     var vol = video.volume;
@@ -110,6 +116,17 @@
                         video.volume = (vol < 0) ? 0 : 1;
                     }
                 }
+                //Opacity ändern
+                function setOpacity(value){
+                  var opa = video.opacity;
+                  opa += value;
+
+                  if(opa >= 0 && opa <= 1){
+                    video.opacity = opa;
+                  } else {
+                    video.opacity = (opa < 0) ? 0 : 1;
+                  }
+                }
                 //  button events
                 //  Play
                 document.getElementById("play").addEventListener("click", vidplay, false);
@@ -117,24 +134,20 @@
                 document.getElementById("restart").addEventListener("click", function () {
                     setTime(0);
                 }, false);
-                //  Skip backward 10 seconds
+                //10 Sekunden zurückspulen
                 document.getElementById("rew").addEventListener("click", function () {
                     setTime(-10);
                 }, false);
-                //  Skip forward 10 seconds
+                //10 Sekunden vorspulen
                 document.getElementById("fwd").addEventListener("click", function () {
                     setTime(10);
                 }, false);
-                // fail with message
-                video.addEventListener("error", function (err) {
-                    errMessage(err);
-                }, true);
-                // volume buttons
+                //Lautstärke Buttons
                 document.getElementById("volDn").addEventListener("click", function () {
-                    setVol(-.1); // down by 10%
+                    setVol(-.1);                 //Lautstärke um 10% senken
                 }, false);
                 document.getElementById("volUp").addEventListener("click", function () {
-                    setVol(.1);  // up by 10%
+                    setVol(.1);                 //Lautstärke um 10% erhöhen
                 }, false);
                 // playback speed buttons
                 document.getElementById("slower").addEventListener("click", function () {
@@ -146,11 +159,17 @@
                 document.getElementById("mute").addEventListener("click", function (evt) {
                     if (video.muted) {
                         video.muted = false;
-                        evt.target.innerHTML = "<img alt='volume on button' src='vol2.png' />"
+                        evt.target.innerHTML = "Mute"
                     } else {
                         video.muted = true;
-                        evt.target.innerHTML = "<img alt='volume off button' src='mute2.png' />"
+                        evt.target.innerHTML = "Mute"
                     }
+                }, false);
+                document.getElementById("opaDn").addEventListener("click", function () {
+                  setOpacity(-0.2);
+                }, false);
+                document.getElementById("opaUp").addEventListener("click", function () {
+                  setOpacity(0.2);
                 }, false);
             } // end of runtime
         }// end of master

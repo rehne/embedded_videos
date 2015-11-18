@@ -99,19 +99,23 @@ a {
       margin-top: 1rem;
       margin-left: 0;
 	   }  }
-
-#header-vid {
+#parent {
+  position: relative;
+}
+.child{
+  position: absolute;
+}
+#header-vid-s {
   margin: 0 auto;
   width: 100%;
   height: auto;
-  z-index: 1;
 }
-#header-vid-SD {
+#header-vid-sd {
   margin: 0 auto;
   width: 100%;
   height: auto;
-  z-index: 2147483647;
 }
+/*
 @media screen and (min-width: 64em) {
   #header-vid {
      ; } }
@@ -123,7 +127,7 @@ a {
 @media screen and (max-width: 42em) {
 #header-vid  {
 	  min-height:17%;
-    } }
+    } }*/
 /* ------------------ PAGE HEADER ------------------ */
 .page-header {
   color: #fff;
