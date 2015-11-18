@@ -6,13 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../stylesheets/github-light.css" media="screen">
   </head>
-  <body>
+  <body onload="init();">
     <section class="page-header">
-      <h1 class="project-name">Embedded Videos</h1>
+      <div class="project-name">Embedded Videos</div>
       <h2 class="project-tagline">Projekt der Technischen Hochschule Köln im Rahmen des Studiengangs Medieninformatik</h2>
+      <video class="header-vid-SD" title="video element" volume="mute" autoplay loop controls>
+        <source src="../src/headerSD.mp4" type="video/mp4">
+        <source src="../src/headerSD.webm" type="video/webm">
+      </video>
+      <video id="header-vid" title="video element" autoplay loop controls>
+        <source src="../src/headerS.mp4" type="video/mp4">
+        <source src="../src/headerS.webm" type="video/webm">
+      </video>
+      <div class="box" style="float: left; width: 50%;">
+        <button id="restart" title="Restart button">|<</button>
+        <button id="slower" title="Slower playback button">-</button>
+        <button id="rew" title="Rewind button" >&#9668&#9668</button>
+        <button id="play" title="Play button">&#9658</button>
+        <button id="fwd" title="Forward button" >&#9658&#9658</button>
+        <button id="faster" title="Faster playback button">+</button>
+        <button id="volplus" title="Volume plus button">Vol +</button>
+        <button id="volminus" title="Volume minus button">Vol -</button>
+      </div>
+      <div class="box" style="float: left; width: 50%;">
+        <button id="restart" title="Restart button">|<</button>
+        <button id="slower" title="Slower playback button">-</button>
+        <button id="rew" title="Rewind button" >&#9668&#9668</button>
+        <button id="play" title="Play button">&#9658</button>
+        <button id="fwd" title="Forward button" >&#9658&#9658</button>
+        <button id="faster" title="Faster playback button">+</button>
+        <button id="volplus" title="Volume plus button">Vol +</button>
+        <button id="volminus" title="Volume minus button">Vol -</button>
+      </div>
       <a href="../index.html" class="btn">How-To Embedding</a>
       <a href="../html5videoeffects/index.html" class="btn">HTML5 Video Effects</a>
       <a href="#" class="btn">Video Controls</a>
@@ -22,45 +51,15 @@
 
         <h1>Video Controls</h1>
 
-
-        <video id="Video1" controls style="border: 1px solid blue;" height="240" width="320" title="video element">
-             HTML5 Video is required for this example
-        </video>
-
-        <div id="buttonbar" style="display: none;")>
-            <button id="restart" title="Restart button">[]</button>
-            <button id="slower" title="Slower playback button">-</button>
-            <button id="rew" title="Rewind button" >&lt;&lt;</button>
-            <button id="play" title="Play button">&gt;</button>
-            <button id="fwd" title="Forward button" >&gt;&gt;</button>
-            <button id="faster" title="Faster playback button">+</button>
-            <button id="Button2" title="Mute button" ><img alt="Volume on button" src="vol2.png" /></button>
-            <br />
-            <label>Playback </label>
-                <label>Reset playback rate: </label><button id="normal" title="Reset playback rate button">=</button>
-            <label>  Volume </label>
-                <button id="volDn"  title="Volume down button">-</button>
-                <button id="volUp"  title="Volume up button">+</button>
-                <button id="mute" title="Mute button" ><img alt="Volume on button" src="vol2.png" /></button>
-        </div>
-        <br/>
-        <div id= "inputField" style="display:none;" >
-            <label>Type or paste a video URL: <br/>
-            <input type="text" id="videoFile" style="width: 300px;"  title="video file input field" value="http://ie.microsoft.com/testdrive/ieblog/2011/nov/pp4_blog_demo.mp4" />
-            <button id="loadVideo" title="Load video button" >Load</button>
-            </label>
-        </div>
-        <div title="Error message area" id="errorMsg" style="color:Red;"></div>
-
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/rehne/embedded_videos">Embedded Videos</a> | Projekt von <a href="https://github.com/Cuhater">Christian Krenn</a> und <a href="https://github.com/rehne">René Honnen</a>.</span>
 
         <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
     </section>
-    <script>
+    <script type="text/javascript">
         function init() {        // Master function, encapsulates all functions
-            var video = document.getElementById("Video1");
+            var video = document.getElementById("header-vid");
             if (video.canPlayType) {   // tests that we have HTML5 video support
                 // if successful, display buttons and set up events
                 document.getElementById("buttonbar").style.display = "block";
@@ -83,7 +82,7 @@
                 }
                 //  load video file from input field
                 function getVideo() {
-                    var fileURL = document.getElementById("videoFile").value;  // get input field
+                    var fileURL = "../src/headerS.mp4";  // get input field
                     if (fileURL != "") {
                         video.src = fileURL;
                         video.load();  // if HTML source element is used
@@ -151,10 +150,10 @@
                     errMessage(err);
                 }, true);
                 // volume buttons
-                document.getElementById("volDn").addEventListener("click", function () {
+                document.getElementById("volminus").addEventListener("click", function () {
                     setVol(-.1); // down by 10%
                 }, false);
-                document.getElementById("volUp").addEventListener("click", function () {
+                document.getElementById("volplus").addEventListener("click", function () {
                     setVol(.1);  // up by 10%
                 }, false);
 

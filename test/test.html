@@ -1,6 +1,9 @@
+<!doctype html>
 <html >
   <head>
-    <title>Full player example</title>
+    <meta charset="utf-8">
+    <title>Embedded Videos by Christian Krenn & René Honnen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Uncomment the following meta tag if you have issues rendering this page on an intranet or local site. -->
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"/> -->
 
@@ -24,12 +27,12 @@
                         button.textContent = "||";
                     } else {              // pause the file, and display play symbol
                         video.pause();
-                        button.textContent = ">";
+                        button.textContent = "&#9658";
                     }
                 }
                 //  load video file from input field
                 function getVideo() {
-                    var fileURL = document.getElementById("videoFile").value;  // get input field
+                    var fileURL = "";
                     if (fileURL != "") {
                         video.src = fileURL;
                         video.load();  // if HTML source element is used
@@ -38,8 +41,6 @@
                         errMessage("Enter a valid video URL");  // fail silently
                     }
                 }
-
-
 
                 //  button helper functions
                 //  skip forward, backward, or restart
@@ -138,11 +139,11 @@
     </video>
 
     <div id="buttonbar" style="display: none;")>
-        <button id="restart" title="Restart button">[]</button>
+        <button id="restart" title="Restart button">|&#9668</button>
         <button id="slower" title="Slower playback button">-</button>
-        <button id="rew" title="Rewind button" >&lt;&lt;</button>
-        <button id="play" title="Play button">&gt;</button>
-        <button id="fwd" title="Forward button" >&gt;&gt;</button>
+        <button id="rew" title="Rewind button" >&#9668&#9668</button>
+        <button id="play" title="Play button">&#9658</button>
+        <button id="fwd" title="Forward button" >&#9658&#9658</button>
         <button id="faster" title="Faster playback button">+</button>
         <button id="Button2" title="Mute button" ><img alt="Volume on button" src="vol2.png" /></button>
         <br />

@@ -59,14 +59,16 @@ a {
   cursor: pointer;
 }
 
-#box {
+.box {
 	padding: 1rem;
 	width: 100%;
 	border: 1px rgb(89,89,89) solid;
 	border-color: rgb(76, 172, 159);
 	background: rgba(76, 172, 159, 0.2);
 	transition: color 0.2s, background-color 0.2s, border-color 0.2s;
-
+}
+.box > button{
+  color: black;
 }
 #autoplay
 {
@@ -80,7 +82,7 @@ a {
 @media screen and (min-width: 64em) {
   .btn {
     padding: 0.75rem 1rem;
-	margin-top: 20px; } }
+	margin-top: 50px; } }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .btn {
@@ -98,23 +100,28 @@ a {
       margin-left: 0;
 	   }  }
 
-	#header-vid {
-    margin: 0 auto;
-
-	width: 100%;
-    height: auto;
-	z-index: 1;
-	}
+#header-vid {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+#header-vid-SD {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  z-index: 2147483647;
+}
 @media screen and (min-width: 64em) {
   #header-vid {
      ; } }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
-  .#header-vid  {
+  #header-vid  {
     } }
 
 @media screen and (max-width: 42em) {
-  #header-vid  {
+#header-vid  {
 	  min-height:17%;
     } }
 /* ------------------ PAGE HEADER ------------------ */
@@ -214,7 +221,7 @@ a {
 .main-content img {
   max-width: 100%; }
 .main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   font-family: "Amatic SC";
   color: #159957; }

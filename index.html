@@ -12,14 +12,12 @@
   </head>
   <body>
     <section class="page-header">
-
-      <video autoplay loop id="header-vid">
-          <source src="src/headerS.webm" type="video/webm">
-          <source src="src/headerS.mp4" type="video/mp4">
-      </video>
-
       <div class="project-name">Embedded Videos</div>
       <h2 class="project-tagline">Projekt der Technischen Hochschule Köln im Rahmen des Studiengangs Medieninformatik</h2>
+      <video autoplay loop id="header-vid">
+        <source src="src/headerS.mp4" type="video/mp4">
+        <source src="src/headerS.webm" type="video/webm">
+      </video>
       <a href="#" class="btn">How-To Embedding</a>
       <a href="html5videoeffects/index.html" class="btn">HTML5 Video Effects</a>
       <a href="controls/index.html" class="btn">Video Controls</a>
@@ -42,15 +40,15 @@
           <p>Beispiel</p>
           <iframe width="100%" height="360" src="https://www.youtube.com/embed/YgM8HVoG2G8" frameborder="0" allowfullscreen></iframe><br><br>
            <p>Der Iframe befindet sich unter dem jeweiligen Video der Seite. Mit einem Klick auf <i>Teilen</i> - <i> Einbetten </i> erhält man den Code.</p><br>
-          <div id="box"> <img src="src/yt_embed.png" align="center"></div><p>Code:</p>
-          <div id="box"><code>< iframe width="640" height="360" src="https://www.youtube.com/embed/YgM8HVoG2G8" frameborder="0" allowfullscreen><br>< /iframe></code></div>
+          <div class="box"> <img src="src/yt_embed.png" align="center"></div><p>Code:</p>
+          <div class="box"><code>< iframe width="640" height="360" src="https://www.youtube.com/embed/YgM8HVoG2G8" frameborder="0" allowfullscreen><br>< /iframe></code></div>
           <p>Erläuterung:<br><br>
           	Das Element <b>Iframe</b> bzw. Inlineframe ist ein HTML-Element, welches als Objekt innerhalb einer Webseite plaziert wird. In unserem Beispiel das Video welches eingebunden wird.<br> Das Attribut <b>width</b> gibt Breite und <b>height</b> die Höhe des Frames an.<br>Source bzw. <b>src</b> steht für die Quelle der Datei und <b>frameborder</b>=0 gibt an, dass unser Rahmen keinen Rand besitzt.
 
         </p>
         <p> Weitere Iframe Attribute sind auf <a href="http://www.w3schools.com/tags/tag_iframe.asp">W3Schools.com</a> zu finden</p>
         <!--- HTML 5 ---->
-<h3>
+        <h3>
         <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>HTML5 video Element</h3>
         <p>
 
@@ -67,7 +65,7 @@
           <source src="src/sc15.webm" type="video/webm">
           <source src="src/sc15.mp4" type="video/mp4">
         </video>
-        <div id="box">
+        <div class="box">
           <code>< video "width="100%" height="480" controls preload="auto" poster=" thumbnail.jpg"><br>
                 < source src=" meinvideo.webm" type="video/webm">< /source> <br>
                 < source src=" meinvideo.mp4" type="video/mp4">< /source> <br>
@@ -86,25 +84,20 @@
 
         <p>Erlaubt es uns der Browser nicht das Video nativ mithilfe des <code> < video>-tags</code> einzubinden schafft der Adobe Flash Player abhilfe. Dieses Browser Plug-In ermöglicht uns durch verschiedene Methoden Videos einzubetten. </p>
 
-
-     <OBJECT ID="MediaPlayer" WIDTH="192" HEIGHT="190" CLASSID="CLSID:22D6F312-B0F6-11D0-94AB-0080C74C7E95"
-STANDBY="Loading Windows Media Player components..." TYPE="application/x-oleobject">
-<PARAM NAME="FileName" VALUE="src/sc15.wmv">
-<PARAM name="autostart" VALUE="false">
-<PARAM name="ShowControls" VALUE="true">
-<param name="ShowStatusBar" value="false">
-<PARAM name="ShowDisplay" VALUE="false">
-<EMBED TYPE="application/x-mplayer2" SRC="src/sc15.wmv" NAME="MediaPlayer"
-WIDTH="192" HEIGHT="190" ShowControls="1" ShowStatusBar="0" ShowDisplay="0" autostart="0"> </EMBED>
-</OBJECT>
-         <div id="box"><code></code></div>
-<h4>
+        <object id="MediaPlayer" width="192" height="190" classid="CLSID:22D6F312-B0F6-11D0-94AB-0080C74C7E95" standby="Loading Windows Media Player components..." type="application/x-oleobject">
+          <PARAM NAME="FileName" VALUE="src/sc15.wmv">
+          <PARAM name="autostart" VALUE="false">
+          <PARAM name="ShowControls" VALUE="true">
+          <param name="ShowStatusBar" value="false">
+          <PARAM name="ShowDisplay" VALUE="false">
+          <EMBED TYPE="application/x-mplayer2" SRC="src/sc15.wmv" NAME="MediaPlayer" WIDTH="192" HEIGHT="190" ShowControls="1" ShowStatusBar="0" ShowDisplay="0" autostart="0">
+          </EMBED>
+        </OBJECT>
+        <div class="box"><code></code></div>
+        <h4>
         Quicktime
         </h4>
         <p>Eine Alternative zu dem Adobe Flash Player bietet uns Apple's Quicktime. Genau wie bei der Flasheinbindung kann das Video über einen <code>< object></code> oder <code>< embed></code> tag angezeigt werden.  </p>
-
-
-
 
         <h3>
         <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
