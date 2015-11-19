@@ -91,15 +91,20 @@ a {
     font-size: 0.9rem; } }
 
 @media screen and (max-width: 42em) {
-  .btn {
-    display: block;
-    width: 100%;
-    padding: 0.75rem;
-    font-size: 0.9rem; }
-    .btn + .btn {
-      margin-top: 1rem;
-      margin-left: 0;
-	   }  }
+.btn {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 0.9rem; }
+.btn + .btn {
+  margin-top: 1rem;
+  margin-left: 0;
+ }  }
+#header-vid {
+ margin: 0 auto;
+ width: 100%;
+ height: auto;
+}
 #parent {
   position: relative;
 }
