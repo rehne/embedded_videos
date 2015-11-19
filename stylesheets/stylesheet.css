@@ -50,9 +50,9 @@ a {
   margin-top: 20px;
   transition: color 0.2s, background-color 0.2s, border-color 0.2s;
 }
-  .btn-effects + .btn-effects {
-    margin-left: 0.5rem;
-  }
+.btn-effects + .btn-effects {
+  margin-left: 0.5rem;
+}
 .btn-effects:hover{
   color: rgba(21, 87, 153, 0.9);
   background-color: rgba(21, 87, 153, 0.2);
@@ -116,11 +116,13 @@ a {
   margin: 0 auto;
   width: 100%;
   height: auto;
+  z-index: 2;
 }
 #header-vid-sd {
   margin: 0 auto;
   width: 100%;
   height: auto;
+  z-index: 1;
 }
 /* ------------------ PAGE HEADER ------------------ */
 .page-header {
