@@ -9,16 +9,13 @@
     <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-
   </head>
   <body>
     <section class="page-header">
-
       <video autoplay loop id="header-vid">
           <source src="src/headerS.webm" type="video/webm">
           <source src="src/headerS.mp4" type="video/mp4">
       </video>
-
       <div class="project-name">Embedded Videos</div>
       <h2 class="project-tagline">Projekt der Technischen Hochschule Köln im Rahmen des Studiengangs Medieninformatik</h2>
       <a href="#" class="btn">How-To Embedding</a>
@@ -48,24 +45,20 @@
           <div class="box"><p>Code:</p><code>< iframe width="640" height="360" src="https://www.youtube.com/embed/YgM8HVoG2G8" frameborder="0" allowfullscreen><br>< /iframe></code></div>
           <p>Erläuterung:<br><br>
           	Das Element <b>Iframe</b> bzw. Inlineframe ist ein HTML-Element, welches als Objekt innerhalb einer Webseite plaziert wird. In unserem Beispiel das Video welches eingebunden wird.<br> Das Attribut <b>width</b> gibt Breite und <b>height</b> die Höhe des Frames an.<br>Source bzw. <b>src</b> steht für die Quelle der Datei und <b>frameborder</b>=0 gibt an, dass unser Rahmen keinen Rand besitzt.
-
         </p>
-        <p> Weitere Iframe Attribute sind auf <a href="http://www.w3schools.com/tags/tag_iframe.asp">W3Schools.com</a> zu finden</p>
-              
-              
+        <p> Weitere Iframe Attribute sind auf <a href="http://www.w3schools.com/tags/tag_iframe.asp" target="_blank">W3Schools.com</a> zu finden</p>
+
         <!--- HTML 5 ---->
-              
-        <hr>  
+        <hr>
         <h3>HTML5 video Element</h3>
-        <p>
-
-        Die Hyper Markup Language 5 beinhaltet das Multimedia-Element < video>, welches benutzt werden kann um unser Video ohne zusätzliche Plug-Ins einzubetten. Vorraussetzung für das Benutzen von HTML5 ist das der Browser auf der möglichst aktuellen Version ist.
-
-        </p>
-        <ul style="list-style-image: url(src/ul.png)"><li> Firefox 3.0 (oder höher)</li>
-          <li>Safari 3.0 (oder höher)</li>
-          <li>Opera 10.0 (oder höher)</li>
-          <li>Chrome 3.0 (oder höher)</li>
+        <p>Die Hyper Markup Language 5 beinhaltet das Multimedia-Element < video>, welches benutzt werden kann um unser Video ohne zusätzliche Plug-Ins einzubetten. Vorraussetzung für das Benutzen von HTML5 ist das der Browser auf der möglichst aktuellen Version ist.</p>
+        <ul style="list-style-image: url(src/ul.png)">
+          <li>Firefox 3.5 (oder höher)</li>
+          <li>Chrome 4.0 (oder höher)</li>
+          <li>Safari 4.0 (oder höher)</li>
+          <li>Opera 10.5 (oder höher)</li>
+          <li>Internet Explorer 9.0 (oder höher)</li>
+          <li>Edge 12.0 (oder höher)</li>
         </ul>
         <p>Beispiel:</p>
         <video width="100%" height="480" controls preload="auto" poster="src/thumbnail.jpg">
@@ -144,34 +137,27 @@
 		    <h4>Quicktime</h4>
         <p>Eine Alternative zu dem Adobe Flash Player bietet uns Apple's Quicktime. Genau wie bei der Flasheinbindung kann das Video über einen <code>< object></code> oder <code>< embed></code> tag angezeigt werden. Der eigentliche Unterschied besteht in den Formaten und deren Browserkompatibilität.  </p>
 
-            
         <p>Beispiel:</p>
-        <object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" widht="830"height="480"
-        codebase="http://www.apple.com/qtactivex/qtplugin.cab">
-        <param name="SRC" VALUE="src/sc15.mov">
-        <param name="autoplay" VALUE="false">
-        <param name="CONTROLLER" VALUE="false">
-        <embed src="src/sc15.mov" widht="830" height="480" autoplay="false" CONTROLLER="false" pluginspage="http://www.apple.com/quicktime/download/">
-        </embed>
+        <object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" widht="830"height="480" codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+          <param name="SRC" VALUE="src/sc15.mov">
+          <param name="autoplay" VALUE="false">
+          <param name="CONTROLLER" VALUE="false">
+          <embed src="src/sc15.mov" widht="830" height="480" autoplay="false" CONTROLLER="false" pluginspage="http://www.apple.com/quicktime/download/"></embed>
         </object>
 
         <h3 id="faq">FAQ Frequently Asked Questions</h3>
 
         <ul style="list-style-image: url(src/ul.png)">
-        <li><b>Was passiert beim Einbetten und was sind Vor- und Nachteile?</b></li>
-        <p>Die Einbettung ermöglicht es Multimediainhalte, von dem eigenen oder einem externen Server, in unserem Markup zu platzieren. Falls sich die Quelldatei auf z.B. einem Videoportal befindet, verringert sich die Auslastung der Homepage. Die Kehrseite ist, dass das Video möglichst dauerhaft erreichbar ist. Zusammengefasst ist das Einbetten von Inhalten für den Benutzer ein relativ einfaches Werkzeug um Dienste wie Kartenapplikationen oder Video-Player zu implementieren.</p>
-        <li><b>Ein oder mehrere Videobeispiele werden nicht angezeit, was kann ich tun?</b></li>
-        <p>Überprüfe ob der Browser die vorgestellten Methoden interpretieren kann.<br> Für die Einbindung mit Flash oder QuickTime werden die entsprechenden Browser Plug-Ins benötigt. Schalte Browser-Addons wie Adblock aus, um sicher zu stellen, dass alle Elemente angezeigt werden können.</p>
-
-        <li><b>HTML5 oder Flash? Was ist "besser"?</b></li>
-        <p>Viele namenhafte Firmen benutzen das "neue" HTML5 und die Internetcommunity befindet sich in einer Art Übergang, da es ein breites Spektrum an Möglichkeiten bietet. Mit dem Markup lassen sich unter anderem Applegeräte ansteuern, was mit Flash unmöglich war. Auf der anderen Seite fehlen viele Web-Funktionen und Standarts. Ein weiterer Stein auf dem Weg für HTML5 ist, dass Adobe Flash seit vielen Jahren existiert und viele Flashdateien vorhanden sind. Was besser ist sollte der Entwickler selbst entscheiden.
-
-       </p></ul>
-
+          <li><b>Was passiert beim Einbetten und was sind Vor- und Nachteile?</b></li>
+          <p>Die Einbettung ermöglicht es Multimediainhalte, von dem eigenen oder einem externen Server, in unserem Markup zu platzieren. Falls sich die Quelldatei auf z.B. einem Videoportal befindet, verringert sich die Auslastung der Homepage. Die Kehrseite ist, dass das Video möglichst dauerhaft erreichbar ist. Zusammengefasst ist das Einbetten von Inhalten für den Benutzer ein relativ einfaches Werkzeug um Dienste wie Kartenapplikationen oder Video-Player zu implementieren.</p>
+          <li><b>Ein oder mehrere Videobeispiele werden nicht angezeit, was kann ich tun?</b></li>
+          <p>Überprüfe ob der Browser die vorgestellten Methoden interpretieren kann.<br> Für die Einbindung mit Flash oder QuickTime werden die entsprechenden Browser Plug-Ins benötigt. Schalte Browser-Addons wie Adblock aus, um sicher zu stellen, dass alle Elemente angezeigt werden können.</p>
+          <li><b>HTML5 oder Flash? Was ist "besser"?</b></li>
+          <p>Viele namenhafte Firmen benutzen das "neue" HTML5 und die Internetcommunity befindet sich in einer Art Übergang, da es ein breites Spektrum an Möglichkeiten bietet. Mit dem Markup lassen sich unter anderem Applegeräte ansteuern, was mit Flash unmöglich war. Auf der anderen Seite fehlen viele Web-Funktionen und Standarts. Ein weiterer Stein auf dem Weg für HTML5 ist, dass Adobe Flash seit vielen Jahren existiert und viele Flashdateien vorhanden sind. Was besser ist sollte der Entwickler selbst entscheiden.</p>
+        </ul>
       <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/rehne/embedded_videos">Embedded Videos</a> | Projekt von <a href="https://github.com/Cuhater">Christian Krenn</a> und <a href="https://github.com/rehne">René Honnen</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+        <span class="site-footer-owner"><a href="https://github.com/rehne/embedded_videos">Embedded Videos</a> | Projekt von <a href="https://github.com/Cuhater" target="_blank">Christian Krenn</a> und <a href="https://github.com/rehne" target="_blank">René Honnen</a>.</span>
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme" target="_blank">Cayman theme</a> by <a href="https://twitter.com/jasonlong" target="_blank">Jason Long</a>.</span>
       </footer>
     </section>
   </body>
