@@ -2,25 +2,19 @@ function init() {        // Master function, encapsulates all functions
     var video = document.getElementById("header-vid-s");
     var video2 = document.getElementById("header-vid-sd");
     if (video.canPlayType) {   // testet ob das HTML5 Video-Tag unterstützt wird
-        // if successful, display buttons and set up events
+        //falls true, dann führe alles folgende aus:
         document.getElementById("buttonbar").style.display = "block";
-
-        // helper functions
-        //  play video
-        function vidplay(evt) {
-            button = evt.target; //  get the button id to swap the text based on the state
-            if (video.paused) {   // abspielen und Pause-Symbol anzeigen
-                video.play();
-                button.innerHTML = "&#9724";
-            } else {              // pausieren und Play-Symbol anzeigen
-                video.pause();
-                button.innerHTML = "&#9658";
-            }
+        function vidplay(evt){
+          button = evt.target;
+          if(video.paused){
+             video.play();
+             button.innerHTML = "&#9724";
+          } else {
+             video.pause();
+             button.innerHTML = "&#9658";
+          }
         }
-        //  button helper functions
-        //  skip forward, backward, or restart
         function setTime(tValue) {
-        //  if no video is loaded, this throws an exception
           try {
               if (tValue == 0) {
                   video.currentTime = tValue;
@@ -32,7 +26,7 @@ function init() {        // Master function, encapsulates all functions
            errMessage("Video Inhalt wurde nicht geladen");
            }
          }
-        // change volume based on incoming value
+        //Lautstärke ändern
         function setVol(value) {
             var vol = video.volume;
             vol += value;
@@ -45,10 +39,9 @@ function init() {        // Master function, encapsulates all functions
                 video.volume = (vol < 0) ? 0 : 1;
             }
         }
-        //  button events
-        //  Play
+        //Play
         document.getElementById("play").addEventListener("click", vidplay, false);
-        //  Restart
+        //Video von vorne starten
         document.getElementById("restart").addEventListener("click", function () {
             setTime(0);
         }, false);
@@ -67,7 +60,7 @@ function init() {        // Master function, encapsulates all functions
         document.getElementById("volUp").addEventListener("click", function () {
             setVol(.1);                 //Lautstärke um 10% erhöhen
         }, false);
-        // playback speed buttons
+        //Abspielgeschwindigkeit
         document.getElementById("slower").addEventListener("click", function () {
             video.playbackRate -= .25;
         }, false);
@@ -87,11 +80,11 @@ function init() {        // Master function, encapsulates all functions
       function vidPlay2(evt){
         button = evt.target;
         if(video2.paused){
-          video2.play();
-          button.innerHTML = "&#9724";
+           video2.play();
+           button.innerHTML = "&#9724";
         } else {
-          video.pause();
-          button.innerHTML = "&#9658";
+           video2.pause();
+           button.innerHTML = "&#9658";
         }
       }
       function setTime2(tValue){
