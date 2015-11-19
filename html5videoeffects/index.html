@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <title>HTML5 Video Effects | Embedded Videos by Christian Krenn & René Honnen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.css" media="screen">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../stylesheets/github-light.css" media="screen">
     <link rel="stylesheet" type="text/css" href="src/animate.css">
@@ -122,9 +121,7 @@
 
     // Call effect routine
     function showEffect(effect){
-
         switch(effect){
-
             // Border & background
             case "border":
                 useBorder = !useBorder;
@@ -153,7 +150,6 @@
             case "clear":
                 clearClasses();
                 break;
-
             // Masks
             case "mask":
                 mask.attr("style", "");
@@ -172,7 +168,6 @@
             case "clearmask":
                 clearMaskClasses();
                 break;
-
             // Show & hide
             /*  case "display":
                 displayNone = !displayNone;
@@ -186,7 +181,6 @@
                 opacityDimmed = !opacityDimmed;
                 swapVisibilityClasses(opacityDimmed, "video-opacity-dimmed");
                 break;
-
             // Change size
             case "small":
                 swapSizeClasses("video-size-small");
@@ -197,7 +191,6 @@
             case "large":
                 swapSizeClasses("video-size-large");
                 break;
-
             // Drag & drop
             case "drag":
                 video.draggable();
@@ -310,7 +303,6 @@
             of: $("#video-wrapper")
         });
     }
-
     </script>
   </body>
 </html>

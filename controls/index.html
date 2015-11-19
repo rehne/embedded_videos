@@ -2,11 +2,13 @@
 <html >
   <head>
     <meta charset="utf-8">
-    <title>Embedded Videos by Christian Krenn & René Honnen</title>
+    <title>Video Controls | Embedded Videos by Christian Krenn & René Honnen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.css" media="screen">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="script.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../stylesheets/github-light.css" media="screen">
   </head>
@@ -15,17 +17,15 @@
       <div class="project-name">Embedded Videos</div>
       <h2 class="project-tagline">Projekt der Technischen Hochschule Köln im Rahmen des Studiengangs Medieninformatik</h2>
 
-
-          <video id="header-vid-s" title="video element">
+          <video id="header-vid-s" title="video element" poster="../src/headerS_poster.png">
             <source src="../src/headerS.mp4" type="video/mp4">
             <source src="../src/headerS.webm" type="video/webm">
           </video>
 
-          <video id="header-vid-sd" title="video element">
+          <video id="header-vid-sd" title="video element" poster="../src/headerSD_poster.png">
             <source src="../src/headerSD.mp4" type="video/mp4">
             <source src="../src/headerSD.webm" type="video/webm">
           </video>
-
 
       <div id="buttonbar" class="box" style="float: left; width: 50%;">
         <button id="restart" title="Restart button">|&#9668</button>
@@ -36,22 +36,26 @@
         <button id="faster" title="Faster playback button">+</button>
         <button id="volDn"  title="Volume down button">Vol -</button>
         <button id="volUp"  title="Volume up button">Vol +</button>
-        <button id="mute" title="Mute button">Mute</button>
-        <button id="opaDn" title="Opacity down button">Opa -</button>
-        <button id="opaUp" title="Opacity up button">Opa +</button>
+        <button id="mute" title="Mute button">Mute</button><br>
+        <label>Sichtbarkeit: </label>
+        <button id="opaNull" title="Opacity down button">0 %</button>
+        <button id="opaFuenfzig" title="Opacity up button">50 %</button>
+        <button id="opaHundert" title="Opacity up button">100 %</button>
       </div>
       <div id="buttonbar2" class="box" style="float: left; width: 50%;">
-        <button id="restart" title="Restart button">|&#9668</button>
-        <button id="slower" title="Slower playback button">-</button>
-        <button id="rew" title="Rewind button" >&#9668&#9668</button>
-        <button id="play" title="Play button">&#9658</button>
-        <button id="fwd" title="Forward button" >&#9658&#9658</button>
-        <button id="faster" title="Faster playback button">+</button>
-        <button id="volDn"  title="Volume down button">Vol -</button>
-        <button id="volUp"  title="Volume up button">Vol +</button>
-        <button id="mute" title="Mute button">Mute</button>
-        <button id="opaDn" title="Opacity down button">Opa -</button>
-        <button id="opaUp" title="Opacity up button">Opa +</button>
+        <button id="restart2" title="Restart button">|&#9668</button>
+        <button id="slower2" title="Slower playback button">-</button>
+        <button id="rew2" title="Rewind button" >&#9668&#9668</button>
+        <button id="play2" title="Play button">&#9658</button>
+        <button id="fwd2" title="Forward button" >&#9658&#9658</button>
+        <button id="faster2" title="Faster playback button">+</button>
+        <button id="volDn2"  title="Volume down button">Vol -</button>
+        <button id="volUp2"  title="Volume up button">Vol +</button>
+        <button id="mute2" title="Mute button">Mute</button>
+        <label>Sichtbarkeit: </label>
+        <button id="opaNull2" title="Opacity down button">0 %</button>
+        <button id="opaFuenfzig2" title="Opacity up button">50 %</button>
+        <button id="opaHundert2" title="Opacity up button">100 %</button>
       </div>
       <a href="../index.html" class="btn">How-To Embedding</a>
       <a href="../html5videoeffects/index.html" class="btn">HTML5 Video Effects</a>

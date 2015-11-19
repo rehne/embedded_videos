@@ -48,9 +48,11 @@ a {
   border-radius: 0.3rem;
   padding: 0.50rem 1rem;
   margin-top: 20px;
-  transition: color 0.2s, background-color 0.2s, border-color 0.2s; }
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+}
   .btn-effects + .btn-effects {
-    margin-left: 0.5rem; }
+    margin-left: 0.5rem;
+  }
 .btn-effects:hover{
   color: rgba(21, 87, 153, 0.9);
   background-color: rgba(21, 87, 153, 0.2);
@@ -70,8 +72,7 @@ a {
 .box > button{
   color: black;
 }
-#autoplay
-{
+#autoplay {
 	autoplay: false;
 	autostart: false;
 	autoplay: 0;
@@ -106,6 +107,7 @@ a {
   position: absolute;
 }
 #header-vid-s {
+  position: absolute;
   margin: 0 auto;
   width: 100%;
   height: auto;
@@ -115,19 +117,6 @@ a {
   width: 100%;
   height: auto;
 }
-/*
-@media screen and (min-width: 64em) {
-  #header-vid {
-     ; } }
-
-@media screen and (min-width: 42em) and (max-width: 64em) {
-  #header-vid  {
-    } }
-
-@media screen and (max-width: 42em) {
-#header-vid  {
-	  min-height:17%;
-    } }*/
 /* ------------------ PAGE HEADER ------------------ */
 .page-header {
   color: #fff;
@@ -166,27 +155,31 @@ a {
    /* box-shadow: 10px 10px 5px #159957; */
   width: 70%;
   z-index: 2147483647;
-  }
+}
+
 @media screen and (min-width: 64em) {
   .project-name {
-	top: 1rem;
-	font-size:  4.25rem;
-	z-index: 2147483647;
-} }
+  	top: 1rem;
+  	font-size:  4.25rem;
+  	z-index: 2147483647;
+  }
+}
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .project-name {
 	  top: 1rem;
     font-size: 3.25rem;
-	z-index: 2147483647;
-} }
+	  z-index: 2147483647;
+  }
+}
 
 @media screen and (max-width: 42em) {
   .project-name {
 	  top: 1rem;
     font-size: 2.75rem;
-	z-index: 2147483647;
-} }
+	  z-index: 2147483647;
+  }
+}
 
 /* ------------------ PROJECT TAGLINE ------------------ */
 .project-tagline {
@@ -202,23 +195,27 @@ a {
    /* box-shadow: 10px 10px 5px #159957; */
   width: 77%;
   z-index: 2147483647;
-  }
+}
 
 @media screen and (min-width: 64em) {
   .project-tagline {
     font-size: 2.0rem;
-	top: 7rem; } }
+	  top: 7rem;
+  }
+}
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .project-tagline {
     font-size: 1.25rem;
-	top: 7rem; } }
+	  top: 7rem;
+  }
+}
 
 @media screen and (max-width: 42em) {
   .project-tagline {
-	  visibility:hidden; } }
-
-
+	  visibility:hidden;
+  }
+}
 
 .main-content :first-child {
   margin-top: 0; }
@@ -230,17 +227,23 @@ a {
   font-family: "Amatic SC";
   color: #159957; }
 
-  @media  screen and (min-width: 64em) {
-.main-content h1, .main-content h2, .main-content h3{
-    font-size: 2.5rem; } }
+@media  screen and (min-width: 64em) {
+  .main-content h1, .main-content h2, .main-content h3{
+    font-size: 2.5rem;
+  }
+}
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
-.main-content h1, .main-content h2, .main-content h3{
-    font-size: 2.5rem; } }
+  .main-content h1, .main-content h2, .main-content h3{
+    font-size: 2.5rem;
+  }
+}
 
 @media screen and (max-width: 42em) {
-.main-content h1, .main-content h2, .main-content h3{
-    font-size: 1.5rem; } }
+  .main-content h1, .main-content h2, .main-content h3{
+    font-size: 1.5rem;
+  }
+}
 
 
 .main-content h4, .main-content h5, .main-content h6 {
@@ -248,29 +251,38 @@ a {
   margin-bottom: 1rem;
   font-family: "Amatic SC";
   color: #159957;
-  font-weight: normal; }
+  font-weight: normal;
+}
 
-  @media  screen and (min-width: 64em) {
-.main-content h4, .main-content h5, .main-content h6 {
-    font-size: 2.5rem; } }
+@media  screen and (min-width: 64em) {
+  .main-content h4, .main-content h5, .main-content h6 {
+    font-size: 2.5rem;
+  }
+}
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
-.main-content h4, .main-content h5, .main-content h6 {
-    font-size: 2.5rem; } }
+  .main-content h4, .main-content h5, .main-content h6 {
+    font-size: 2.5rem;
+  }
+}
 
 @media screen and (max-width: 42em) {
-.main-content h4, .main-content h5, .main-content h6 {
-    font-size: 1.5rem; } }
+  .main-content h4, .main-content h5, .main-content h6 {
+    font-size: 1.5rem;
+  }
+}
 
 .main-content p {
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+}
 .main-content code {
   padding: 2px 4px;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 0.9rem;
   color: #383e41;
   background-color: #f3f6fa;
-  border-radius: 0.3rem; }
+  border-radius: 0.3rem;
+}
 .main-content pre {
   padding: 0.8rem;
   margin-top: 0;
@@ -280,8 +292,9 @@ a {
   word-wrap: normal;
   background-color: #f3f6fa;
   border: solid 1px #dce6f0;
-  border-radius: 0.3rem; }
-  .main-content pre > code {
+  border-radius: 0.3rem;
+}
+.main-content pre > code {
     padding: 0;
     margin: 0;
     font-size: 0.9rem;
@@ -291,16 +304,19 @@ a {
     background: transparent;
     border: 0; }
 .main-content .highlight {
-  margin-bottom: 1rem; }
-  .main-content .highlight pre {
+  margin-bottom: 1rem;
+}
+.main-content .highlight pre {
     margin-bottom: 0;
-    word-break: normal; }
+    word-break: normal;
+}
 .main-content .highlight pre, .main-content pre {
   padding: 0.8rem;
   overflow: auto;
   font-size: 0.9rem;
   line-height: 1.45;
-  border-radius: 0.3rem; }
+  border-radius: 0.3rem;
+}
 .main-content pre code, .main-content pre tt {
   display: inline;
   max-width: initial;
@@ -310,8 +326,9 @@ a {
   line-height: inherit;
   word-wrap: normal;
   background-color: transparent;
-  border: 0; }
-  .main-content pre code:before, .main-content pre code:after, .main-content pre tt:before, .main-content pre tt:after {
+  border: 0;
+}
+.main-content pre code:before, .main-content pre code:after, .main-content pre tt:before, .main-content pre tt:after {
     content: normal; }
 .main-content ul, .main-content ol {
   margin-top: 0; }
@@ -319,39 +336,48 @@ a {
   padding: 0 1rem;
   margin-left: 0;
   color: #819198;
-  border-left: 0.3rem solid #dce6f0; }
-  .main-content blockquote > :first-child {
-    margin-top: 0; }
-  .main-content blockquote > :last-child {
-    margin-bottom: 0; }
+  border-left: 0.3rem solid #dce6f0;
+}
+.main-content blockquote > :first-child {
+    margin-top: 0;
+}
+.main-content blockquote > :last-child {
+    margin-bottom: 0;
+}
 .main-content table {
   display: block;
   width: 100%;
   overflow: auto;
   word-break: normal;
-  word-break: keep-all; }
-  .main-content table th {
-    font-weight: bold; }
-  .main-content table th, .main-content table td {
+  word-break: keep-all;
+}
+.main-content table th {
+    font-weight: bold;
+}
+.main-content table th, .main-content table td {
     padding: 0.5rem 1rem;
-    border: 1px solid #e9ebec; }
+    border: 1px solid #e9ebec;
+}
 .main-content dl {
-  padding: 0; }
+  padding: 0;
+}
   .main-content dl dt {
     padding: 0;
     margin-top: 1rem;
     font-size: 1rem;
-    font-weight: bold; }
-  .main-content dl dd {
+    font-weight: bold;
+}
+.main-content dl dd {
     padding: 0;
-    margin-bottom: 1rem; }
+    margin-bottom: 1rem;
+  }
 .main-content hr {
   height: 2px;
   padding: 0;
   margin: 1rem 0;
   background-color: #eff0f1;
-  border: 0; }
-
+  border: 0;
+}
 @media  screen and (min-width: 64em) {
   .main-content {
     max-width: 64rem;
