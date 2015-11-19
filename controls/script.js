@@ -14,8 +14,6 @@ $(document).ready(function(){
     $('.project-tagline').show('slow');
   });
 
-  var opacityS = 1;
-  var opacitySD = 1;
   $('#opaNull').click(function(){
     $('#header-vid-s').css('opacity', '0');
   }),
