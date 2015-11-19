@@ -46,12 +46,12 @@ a {
   border-style: solid;
   border-width: 1px;
   border-radius: 0.3rem;
-  padding: 0.50rem 1rem;
-  margin-top: 20px;
+  padding: 0 1rem;
+  margin-top: 1rem;
   transition: color 0.2s, background-color 0.2s, border-color 0.2s;
 }
 .btn-effects + .btn-effects {
-  margin-left: 0.5rem;
+  margin-left: 0.3rem;
 }
 .btn-effects:hover{
   color: rgba(21, 87, 153, 0.9);
@@ -66,9 +66,21 @@ a {
 	width: 100%;
 	border: 1px rgb(89,89,89) solid;
 	border-color: rgb(76, 172, 159);
+    border-radius: 0.3rem;
 	background: rgba(76, 172, 159, 0.2);
 	transition: color 0.2s, background-color 0.2s, border-color 0.2s;
 }
+
+.box-effects {
+    padding: 0 1rem; 
+	width: 100%;
+	border: 1px rgb(89,89,89) solid;
+	border-color: rgb(76, 172, 159);
+    border-radius: 0.5rem;
+	background: rgba(76, 172, 159, 0.2);
+	transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+}
+
 .box > button{
   color: black;
 }
