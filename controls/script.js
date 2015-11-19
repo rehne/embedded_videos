@@ -24,5 +24,14 @@ $(document).ready(function(){
   }),
   $('#opaHundert').click(function(){
     $('#header-vid-s').css('opacity', '1');
+  }),
+  $('#opaNull2').click(function(){
+    $('#header-vid-sd').css('opacity', '0');
+  }),
+  $('#opaFuenfzig2').click(function(){
+    $('#header-vid-sd').css('opacity', '0.5');
+  }),
+  $('#opaHundert2').click(function(){
+    $('#header-vid-sd').css('opacity', '1');
   })
 })
