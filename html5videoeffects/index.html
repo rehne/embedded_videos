@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>HTML5 Video Effects | Embedded Videos von Christian Krenn & René Honnen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.css" media="screen">
@@ -19,10 +20,10 @@
         <div id="video-column">
               <div id="video-wrapper" class="fixed video-background">
                   <div id="video-mask">
-                      <video id="video-source" loop autoplay width="600" height="337">
-                          <source src="video/tiger.mp4" type="video/mp4">
-                          <source src="video/tiger.webm" type="video/webm">
-                          <source src="video/tiger.ogv" type="video/ogg">
+                      <video id="video-source" loop autoplay muted width="600" height="337">
+                          <source src="video/sample.mp4" type="video/mp4">
+                          <source src="video/sample.webm" type="video/webm">
+                          <source src="video/sample.ogv" type="video/ogg">
                       </video>
                   </div>
               </div>
@@ -33,72 +34,48 @@
       <a href="../controls/index.html" class="btn">Video Controls</a>
     </section>
     <section class="main-content">
-      <div>
-        <h3>Add a border & background</h3>
-        <div class="box">
-          <a class="btn-effects" data-effect="border">Border</a>
-          <a class="btn-effects" data-effect="round">Round</a>
-          <a class="btn-effects" data-effect="shadow">Shadow</a>
-          <a class="btn-effects" data-effect="color">Color</a>
+      <center>
+        <h3>Umrandung & Hintergrund</h3>
+        <div class="box-effects">
+          <a class="btn-effects" data-effect="border">Rand</a>
+          <a class="btn-effects" data-effect="round">Abrunden</a>
+          <a class="btn-effects" data-effect="shadow">Schatten</a>
+          <a class="btn-effects" data-effect="color">Farbe</a>
           <a class="btn-effects" data-effect="gradient">Gradient</a>
-          <a class="btn-effects" data-effect="image">Image</a>
-          <a class="btn-effects" data-effect="tile">Tile</a>
-          <a class="btn-effects" data-effect="clear">Clear</a>
+          <a class="btn-effects" data-effect="image">Bild</a>
+          <a class="btn-effects" data-effect="tile">Kachel</a>
         </div>
 
-        <h3>Crop the video</h3>
-        <div class="box">
-          <a class="btn-effects" data-effect="mask">Rectangle</a>
-          <a class="btn-effects" data-effect="maskanimated">Animated Mask</a>
-          <a class="btn-effects" data-effect="maskcircle">Circle</a>
-          <a class="btn-effects" data-effect="clearmask">Clear</a>
+        <h3>Videoschnitt</h3>
+        <div class="box-effects">
+          <a class="btn-effects" data-effect="mask">Rechteck</a>
+		<a class="btn-effects" data-effect="maskanimated">Animierte Maske</a>
+			<a class="btn-effects" data-effect="maskcircle">Kreis</a>
         </div>
 
-        <h3>Show & hide the video</h3>
-        <div class="box">
-          <a class="btn-effects" data-effect="visibility">Visibility</a>
-          <a class="btn-effects" data-effect="opacity">Opacity</a>
+        <h3>Sichtbarkeit</h3>
+        <div class="box-effects">
+			<a class="btn-effects" data-effect="visibility">Sichtbarkeit</a>
+			<a class="btn-effects" data-effect="opacity">Transparenz</a>
         </div>
 
-        <h3>Change the video size</h3>
-        <div class="box">
-          <a class="btn-effects" data-effect="small">Small</a>
-          <a class="btn-effects" data-effect="medium">Medium</a>
-          <a class="btn-effects" data-effect="large">Large</a>
+        <h3>Videogröße</h3>
+        <div class="box-effects">
+			<a class="btn-effects" data-effect="small">Klein</a>
+			<a class="btn-effects" data-effect="medium">Mittel</a>
+			<a class="btn-effects" data-effect="large">Groß</a>
         </div>
-
-        <h3>Drag the video</h3>
-        <div class="box">
-          <a class="btn-effects" data-effect="drag">Drag & Drop</a>
-          <a class="btn-effects" data-effect="dragclear">Reset</a>
+        <a class="btn-effects" data-effect="clear">Umrandung & Hintergrund zurücksetzen</a>
+        <a class="btn-effects" data-effect="clearmask">Schnitt zurücksetzen</a>
+        <hr>
+		<br>
+        
+        <h3>Drag & Drop</h3>
+        <div class="box-effects">
+			<a class="btn-effects" data-effect="drag">Drag & Drop</a>
         </div>
-
-<!--
-        <h3>Transform the video</h3>
-        <div class="box">
-          <a class="btn-effects" data-effect="rotate">Rotate</a>
-          <a class="btn-effects" data-effect="skew">Skew</a>
-          <a class="btn-effects" data-effect="scale">Scale</a>
-          <a class="btn-effects" data-effect="translate">Translate</a>
-          <a class="btn-effects" data-effect="cleartransform">Clear</a>
-        </div>
-
-        <h3>Animate the video</h3>
-        <div class="box">
-          <a class="btn-effects" data-effect="fade">Fade</a>
-          <a class="btn-effects" data-effect="transition">Enter / Exit</a>
-          <a class="btn-effects" data-effect="animation">Bounce</a>
-          <a class="btn-effects" data-effect="3D">3D Flip</a>
-        </div>
-
-        <h3>Add HTML5 canvas effects</h3>
-        <div class="box">
-          <a class="btn-effects" data-effect="color">Color Effect</a>
-          <a class="btn-effects" data-effect="tile">Drag & Drop Tile Effect</a>
-        </div>
--->
-
-      </div>
+        <a class="btn-effects" data-effect="dragclear">Reset</a>
+      </center>
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/rehne/embedded_videos">Embedded Videos</a> | Projekt von <a href="https://github.com/Cuhater">Christian Krenn</a> und <a href="https://github.com/rehne">René Honnen</a>.</span>
 

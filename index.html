@@ -27,31 +27,30 @@
 
         <h3>Allgemeines</h3>
 
-        <p>Das Thema dieser Seite beschäftigt sich mit der Einbettung/Einbindung von Videos auf Webseiten. Wir möchten euch versuchen zu erklären wie man Videos mithilfe von verschiedenen Techniken
+        <p>Das Thema dieser Seite beschäftigt sich mit der Einbettung/Einbindung von Videos auf Webseiten. Wir möchten versuchen zu erklären wie man Videos mithilfe von verschiedenen Techniken
         	in Websites einbindet.<br>
-          Zu jedem Artikel findet ihr Codebeispiele, an denen wir den benutzten Code veranschaulichen. <br>
-          Zusätzlich sind grundlegende Fragen in unserem <a href="#faq">FAQ-Bereich</a> zu finden.</br>
+          Zu jedem Artikel sind Codeausschnitte zu finden, an denen der benutzten Code veranschaulicht werden soll. <br>
+          Zusätzlich sind grundlegende Fragen im <a href="#faq">FAQ-Bereich</a> zu finden.</br>
    	      Wer noch mehr Informationen benötigt, der findet das gesamte Projekt auch auf Github. <a href="https://github.com/rehne/embedded_videos/tree/gh-pages"><img src="src/GitHub_Logo.png" align="right"></a></p>
         <hr>
         <h3>Einfache Einbindung (YouTube)</h3>
 
-           <p>Die simpelste Methode der Einbettung ist das Einbinden von Videos bekannten Videoportalen wie Youtube oder Vimeo. Diese stellen uns einen Iframe-Code zur Verfügung, den wir in unser Markup der HTML Datei der Seite einbringen.</p>
+           <p>Die simpelste Methode der Einbettung ist das Einbinden von Videos bekannter Videoportalen wie Youtube oder Vimeo. Diese stellen uns einen Iframe-Code zur Verfügung, der in das Markup der HTML Datei der Seite eingebracht wird.</p>
            <br>
           <p>Beispiel:</p>
-          <iframe width="100%" height="360" src="https://www.youtube.com/embed/YgM8HVoG2G8" frameborder="0" allowfullscreen></iframe><br><br>
-           <p>Der Iframe befindet sich unter dem jeweiligen Video der Seite. Mit einem Klick auf <i>Teilen</i> - <i> Einbetten </i> erhält man den Code.</p><br>
+          <iframe width="100%" height="360" src="https://www.youtube.com/embed/YgM8HVoG2G8" frameborder="0" allowfullscreen></iframe><br>
           <div class="box"> <img src="src/yt_embed.png" align="center"></div>
-          <br>
+           <p>Der Iframe-Code befindet sich unter dem jeweiligen Video der Seite. Mit einem Klick auf <i>Teilen</i> - <i> Einbetten </i> wird er sichtbar.</p>
           <div class="box"><p>Code:</p><code>< iframe width="640" height="360" src="https://www.youtube.com/embed/YgM8HVoG2G8" frameborder="0" allowfullscreen><br>< /iframe></code></div>
           <p>Erläuterung:<br><br>
-          	Das Element <b>Iframe</b> bzw. Inlineframe ist ein HTML-Element, welches als Objekt innerhalb einer Webseite plaziert wird. In unserem Beispiel das Video welches eingebunden wird.<br> Das Attribut <b>width</b> gibt Breite und <b>height</b> die Höhe des Frames an.<br>Source bzw. <b>src</b> steht für die Quelle der Datei und <b>frameborder</b>=0 gibt an, dass unser Rahmen keinen Rand besitzt.
+          	Das Element <b>Iframe</b> bzw. Inlineframe ist ein HTML-Element, welches als Objekt innerhalb einer Webseite plaziert wird. In dem Beispiel das Video welches eingebunden wird.<br> Die Attribute <b>width</b> und <b>height</b> setzen die Breite und Höhe des Frames.<br>Source bzw. <b>src</b> steht für die Quelle der Datei und <b>frameborder</b>=0 gibt an, dass unser Rahmen keinen Rand besitzt.
         </p>
         <p> Weitere Iframe Attribute sind auf <a href="http://www.w3schools.com/tags/tag_iframe.asp" target="_blank">W3Schools.com</a> zu finden</p>
 
         <!--- HTML 5 ---->
         <hr>
         <h3>HTML5 video Element</h3>
-        <p>Die Hyper Markup Language 5 beinhaltet das Multimedia-Element < video>, welches benutzt werden kann um unser Video ohne zusätzliche Plug-Ins einzubetten. Vorraussetzung für das Benutzen von HTML5 ist das der Browser auf der möglichst aktuellen Version ist.</p>
+        <p>Die Hyper Markup Language 5 beinhaltet das Multimedia-Element < video>, welches benutzt werden kann um unser Video ohne zusätzliche Plug-Ins einzubetten. Vorraussetzung für das Benutzen von HTML5 ist das die Browserversion möglichst auf den aktuellen Stand ist.</p>
         <ul style="list-style-image: url(src/ul.png)">
           <li>Firefox 3.5 (oder höher)</li>
           <li>Chrome 4.0 (oder höher)</li>
@@ -74,69 +73,57 @@
           </code>
         </div>
         <p>Erläuterung:<br><br>
-        Das Element < video> ist unser Objekt welchem wir verschiedene Parameter zuweisen können.<br> <b>controls</b> fügt eine Reihe von Videosteuerelementen hinzu.<br><b>preload</b> definiert erforderliche Puffermenge des Videos.<br><b>poster</b> gibt das Platzhalterbild an, das angezeigt wird bis der Inhalt geladen und gestartet wird.</p>
+        Das Element <b>video</b> spezifiziert die Einbindung eines Videos, welchem wir verschiedene Parameter zuweisen können.<br> <b>controls</b> fügt eine Reihe von Videosteuerelementen hinzu.<br><b>preload</b> definiert erforderliche Puffermenge des Videos.<br><b>poster</b> gibt das Platzhalterbild an, das angezeigt wird bis der Inhalt geladen und gestartet wird.<br> <b>source</b> enthält den Quellpfad</p>
         <p> Weitere video Attribute sind auf <a href="http://www.w3schools.com/tags/tag_video.asp">W3Schools.com</a> zu finden.</p>
         <hr>
         <h3>Einbindung durch Zusatztechnologien ( Plug-Ins )</h3>
         <h4>Flash</h4>
 
-        <p>Erlaubt es uns der Browser nicht das Video nativ mithilfe des <code> < video>-tags</code> einzubinden schafft der Adobe Flash Player abhilfe. Dieses Browser Plug-In ermöglicht uns Videos ohne HTML5 einzubetten. </p>
+        <p>Mit FLash können wir Videos in den Browser einbinden und aufrufen, selbst wenn dieser den nativen < video>-tag  nicht beherrscht. Das bedeutet, dass dieses Plug-In ohne HTML5 auskommt.</p>
 
         <p>Beispiel:</p>
         <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.adobe.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="830" height="480" id="movie" align="center">
           <param name="movie" value="src/sc15OT.swf">
           <param name="quality" value="High">
-          <param name="bgcolor" value="FFFFFF">
-          <param name="_cx" value="5794">
-          <param name="_cy" value="4524">
           <param name="FlashVars" value="-1">
           <param name="Src" value="src/sc15OT.swf">
           <param name="WMode" value="Window">
           <param name="Play" value="-1">
           <param name="Loop" value="0">
-          <param name="SAlign" value="">
           <param name="Menu" value="-1">
-          <param name="Base" value="">
           <param name="AllowScriptAccess" value="always">
           <param name="Scale" value="ShowAll">
-          <param name="DeviceFont" value="0">
           <param name="EmbedMovie" value="0">
           <param name="SWRemote" value="">
-          <embed src="src/sc15ot.swf" quality="high" bgcolor="#FFFFFF" width="830" height="480" name="movie" align="" type="application/x-shockwave-flash" pluginspage="https://get.adobe.com/de/flashplayer/r">
+          <embed src="src/sc15ot.swf" quality="high" width="830" height="480" name="movie" align="" type="application/x-shockwave-flash" pluginspage="https://get.adobe.com/de/flashplayer/r">
         </object>
         <div class="box"><a class="btn-effects" data-effect="border" href="javascript:document.movie.Play()">&#9658; Play</a><a class="btn-effects" data-effect="border" href="javascript:document.movie.StopPlay()">&#9724; Stop</a></div><br>
         <div class="box"><p>Code:</p><code>< object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.adobe.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0"<br> width="830" height="480" id="movie" align="center"><br>
           < param name="movie" value="src/sc15OT.swf"><br>
           < param name="quality" value="High"><br>
-          < param name="bgcolor" value="FFFFFF"><br>
-          < param name="_cx" value="5794"><br>
-          < param name="_cy" value="4524"><br>
           < param name="FlashVars" value="-1"><br>
           < param name="Src" value="src/sc15OT.swf"><br>
           < param name="WMode" value="Window"><br>
           < param name="Play" value="-1"><br>
           < param name="Loop" value="0"><br>
-          < param name="SAlign" value=""><br>
           < param name="Menu" value="-1"><br>
-          < param name="Base" value=""><br>
           < param name="AllowScriptAccess" value="always"><br>
           < param name="Scale" value="ShowAll"><br>
-          < param name="DeviceFont" value="0"><br>
           < param name="EmbedMovie" value="0"><br>
           < param name="SWRemote" value=""><br>
-          < embed src="src/sc15OT.swf" quality="high" bgcolor="#FFFFFF" width="830" height="480" name="movie" align="" type="application/x-shockwave-flash" pluginspage="https://get.adobe.com/de/flashplayer/">
-          <br>
+          < embed src="src/sc15OT.swf" quality="high" bgcolor="#FFFFFF" width="830" height="480" name="movie" align="" type="application/x-shockwave-flash" pluginspage="https://get.adobe.com/de/flashplayer/"><br>#
+         < /embed><br>
         < /object>
         </code>
         </div>
 
         <p>Erläuterung:<br><br>
         Das Element <b>object</b> erzeugt eingebettetes Objekt in dem HTML Dokument, welches benutzt werden kann um Medien einzubinden.<br>Die benutzte <b>classid</b> ("clsid:D27CDB6E-AE6D-11cf-96B8-444553540000") Identifiziert die ActiveX-Steuerung für den Browser.<br>Das <b>codebase-Attribut</b> gibt den Speicherort der ActiveX-Steuerung für den Flash Player an, damit der Browser es automatisch herunterladen kann, wenn es noch nicht installiert ist.<br></p><b>embed</b> definiert einen Container für Externe Anwendungen und Plug-Ins<br>
-        <p> Parameter und anderer Syntax lassen sich auf <a href="http://www.w3schools.com/tags/tag_video.asp">W3Schools.com</a>finden.</p>
+        <p> Parameter und anderer Syntax lassen sich auf <a href="http://www.w3schools.com/tags/tag_video.asp">W3Schools.com</a> finden.</p>
             <hr>
 		    <h4>Quicktime</h4>
         <p>Eine Alternative zu dem Adobe Flash Player bietet uns Apple's Quicktime. Genau wie bei der Flasheinbindung kann das Video über einen <code>< object></code> oder <code>< embed></code> tag angezeigt werden. Der eigentliche Unterschied besteht in den Formaten und deren Browserkompatibilität.  </p>
-
+	
         <p>Beispiel:</p>
         <object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" widht="830"height="480" codebase="http://www.apple.com/qtactivex/qtplugin.cab">
           <param name="SRC" VALUE="src/sc15.mov">
@@ -144,7 +131,21 @@
           <param name="CONTROLLER" VALUE="false">
           <embed src="src/sc15.mov" widht="830" height="480" autoplay="false" CONTROLLER="false" pluginspage="http://www.apple.com/quicktime/download/"></embed>
         </object>
+		 <div class="box"><p>Code:</p><code>< object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" widht="830"height="480" codebase="http://www.apple.com/qtactivex/qtplugin.cab"><br>
+          < param name="SRC" VALUE="src/sc15.mov"><br>
+          < param name="autoplay" VALUE="false"><br>
+          < param name="CONTROLLER" VALUE="false"><br>
+          < embed src="src/sc15.mov" widht="830" height="480" autoplay="false" CONTROLLER="false" pluginspage="http://www.apple.com/quicktime/download/"><br>
+          < /embed><br>
+        < /object>
+        </code>
+        </div>
 
+        <p>Erläuterung:<br><br>        
+        Das Einbinden erfolgt ähnlich wie im oben gezeigten Flash-Beispiel. 
+        <br>
+        <p>Weitere Informationen sind auf <a href="https://developer.apple.com/library/mac/documentation/QuickTime/Conceptual/QTScripting_HTML/QTScripting_HTML_Document/ScriptingHTML.html">developer.apple.com</a> zu finden.</p>
+        <hr>
         <h3 id="faq">FAQ Frequently Asked Questions</h3>
 
         <ul style="list-style-image: url(src/ul.png)">

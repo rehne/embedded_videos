@@ -88,6 +88,9 @@ template {
 
 a {
   background-color: transparent;
+ font-family: "Amatic SC"; 
+  font-weight: bold;
+  font-size: 1.7rem;
 }
 
 /**
@@ -435,7 +438,11 @@ th {
 
 ul {
 	background: rgba(221, 221, 221, 0.3);
+	border: 1px solid #c0c0c0;
+	border-width: 1px;
+  	border-radius: 0.5rem;
+
 }
 li{
-	margin-top: 5px;
+	margin-top: 10px;
 }
